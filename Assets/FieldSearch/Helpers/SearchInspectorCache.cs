@@ -1,14 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using FieldSearch.Helpers.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using UnityEngine;
 
 namespace FieldSearch.Helpers
 {
 	public class SearchInspectorCache
 	{
-		private static Dictionary<int, (string searchText, int flags)> inspectorsDict
-			= new Dictionary<int, (string searchText, int flags)>();
+		public static float GetCurrentSize() => inspectorsDict.Sum(x => Marshal.SizeOf(x.Value));
 
-		public static void AddValue(int id, (string searchText, int flags) val)
+		protected static Dictionary<int, SearchCacheObj> inspectorsDict
+			= new Dictionary<int, SearchCacheObj>();
+
+		public static void AddValue(SearchCacheObj val)
 		{
+			var id = val.id;
+
 			if (inspectorsDict.ContainsKey(id))
 			{
 				inspectorsDict[id] = val;
@@ -27,11 +35,11 @@ namespace FieldSearch.Helpers
 			}
 		}
 
-		public static (string searchText, int flags) TryGetValue(int id)
+		public static SearchCacheObj TryGetValue(int id)
 		{
-			(string searchText, int flags) res;
+			SearchCacheObj res;
 			inspectorsDict.TryGetValue(id, out res);
-			return res;
+            return res;
 		}
 	}
 }

@@ -9,7 +9,7 @@ namespace FieldSearch.Editor
 	[CustomEditor(typeof(MonoBehaviour), true, isFallback = true)]
 	public class SearchableEditor : UnityEditor.Editor
 	{
-		protected int Id => target.GetType().FullName.GetHashCode();
+		protected int Id => target.GetHashCode();
 		protected SearchInspector searchInspector;
 
 		public virtual void OnEnable()
@@ -25,7 +25,8 @@ namespace FieldSearch.Editor
 
 		public virtual void OnDisable()
 		{
-			SearchInspectorCache.AddValue(Id, searchInspector.GetData());
+			var data = searchInspector.GetData();
+			SearchInspectorCache.AddValue(new Helpers.Data.SearchCacheObj(Id, data.searchText, data.flags));
 		}
 
 		public override void OnInspectorGUI()
