@@ -12,7 +12,7 @@ namespace FieldSearch.Core.Inspectors
 	[CreateAssetMenu(fileName = "DefaultSearchableEditorConfigObject", menuName = "ScriptableObjects/FieldSearch/Searchable Editor/Default Searchable Editor Config Object")]
 	public class DefaultSearchableEditorConfigObject : BaseSearchableEditorConfigObject
 	{
-		protected Func<Object, int> Id => (target) => target.GetHashCode();
+		protected Func<Object, int> Id => (target) => target.GetInstanceID();
 		private SearchInspector searchInspector;
 
 		public override void OnEnableInspector(Object target, SerializedObject serializedObject)

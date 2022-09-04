@@ -59,6 +59,10 @@ namespace FieldSearch.Settings
             if (Instance != this)
             {
                 var path = AssetDatabase.GetAssetPath(Instance);
+
+                Debug.LogError($"Delete previous setting (name: {Instance.name},path: {path})" +
+                    $"\n&& set new instance ({this.name}) to {typeof(FieldSearchSettings)}");
+
                 AssetDatabase.DeleteAsset(path);
                 Instance = this;
             }
