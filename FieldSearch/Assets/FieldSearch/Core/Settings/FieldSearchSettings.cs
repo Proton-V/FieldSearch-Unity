@@ -12,7 +12,7 @@ namespace FieldSearch.Settings
     [CreateAssetMenu(fileName = "FieldSearch Settings", menuName = "ScriptableObjects/FieldSearch/Settings")]
     public class FieldSearchSettings : ScriptableObject
     {
-        private const string GlobalGitignorePath = "FieldSearch/.gitignore_global";
+        private const string GlobalGitignorePath = "FieldSearch/gitignore.global";
 
         public static FieldSearchSettings Instance
         {
