@@ -83,6 +83,11 @@ namespace FieldSearch.Helpers.Cache
 
 		private static bool HasFreeMemorySlots()
         {
+			if(Settings == null)
+            {
+				return true;
+            }
+
 			var currentSizeInMb = ConvertByteToMb(GetCurrentSize());
 			return currentSizeInMb < Settings.MemoryLimitInMb;
 		}

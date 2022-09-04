@@ -1,14 +1,19 @@
 ﻿using FieldSearch.Core.Inspectors;
 using FieldSearch.Core.Inspectors.Base;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 namespace FieldSearch.Settings
 {
     [CreateAssetMenu(fileName = "FieldSearch Settings", menuName = "ScriptableObjects/FieldSearch/Settings")]
     public class FieldSearchSettings : ScriptableObject
     {
+        private const string GlobalGitignorePath = "FieldSearch/.gitignore_global";
+
         public static FieldSearchSettings Instance
         {
             get
@@ -25,14 +30,14 @@ namespace FieldSearch.Settings
 
         [Header("Inspector settings")]
         [SerializeField]
-        private bool applyToAll;
+        private bool applyToAll = true;
 
         [SerializeField]
         private DefaultSearchableEditorConfigObject searchableEditor;
 
         [Header("Cache settings")]
         [SerializeField]
-        private bool saveToDisk;
+        private bool saveToDisk = true;
 
         [SerializeField]
         [Range(100, 10000)]
@@ -60,8 +65,8 @@ namespace FieldSearch.Settings
             {
                 var path = AssetDatabase.GetAssetPath(Instance);
 
-                Debug.LogError($"Delete previous setting (name: {Instance.name},path: {path})" +
-                    $"\n&& set new instance ({this.name}) to {typeof(FieldSearchSettings)}");
+                Debug.LogWarning($"Delete previous setting \n(name: {Instance.name},path: {path})" +
+                    $" && set new instance ({this.name}) to {typeof(FieldSearchSettings)}");
 
                 AssetDatabase.DeleteAsset(path);
                 Instance = this;
@@ -75,6 +80,65 @@ namespace FieldSearch.Settings
             var path = AssetDatabase.GUIDToAssetPath(guid);
 
             return AssetDatabase.LoadAssetAtPath<FieldSearchSettings>(path);
+        }
+
+        [MenuItem("Field Search/Add default settings (override if exists)")]
+        public static void CreateSettingsObject()
+        {
+            var settings = CreateInstance<FieldSearchSettings>();
+
+            var directoryPath = "Assets/FieldSearchConfigs";
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+            
+            var configPath = $"{directoryPath}/DefaultSearchableEditorConfigObject.asset";
+            var config = CreateDefaultSearchableEditorConfig(configPath);
+            settings.searchableEditor = config;
+
+            string path = $"{directoryPath}/FieldSearch Settings.asset";
+            AssetDatabase.CreateAsset(settings, path);
+            AssetDatabase.SaveAssets();
+
+            Selection.activeObject = settings;
+            EditorGUIUtility.PingObject(settings);
+        }
+
+        private static DefaultSearchableEditorConfigObject CreateDefaultSearchableEditorConfig(string path)
+        {
+            var config = CreateInstance<DefaultSearchableEditorConfigObject>();
+            AssetDatabase.CreateAsset(config, path);
+
+            return config;
+        }
+
+        [MenuItem("Field Search/Add package folders to .gitignore (global)")]
+        public static void AddToGlobalGitignore()
+        {
+            var gitignorePath = Path.Combine(Application.dataPath, GlobalGitignorePath);
+            var str = $"git config core.excludesfile {gitignorePath}";
+
+            Debug.LogError(str);
+            StartCmdProcess(str);
+        }
+
+        [MenuItem("Field Search/Remove package folders from .gitignore (global)")]
+        public static void RemoveFromGlobalGitignore()
+        {
+            var str = $"git config --unset core.excludesfile";
+            StartCmdProcess(str);
+        }
+
+        private static void StartCmdProcess(string cmdArgs)
+        {
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.WindowStyle = ProcessWindowStyle.Normal;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = cmdArgs;
+            process.StartInfo = startInfo;
+            process.Start();
         }
     }
 }

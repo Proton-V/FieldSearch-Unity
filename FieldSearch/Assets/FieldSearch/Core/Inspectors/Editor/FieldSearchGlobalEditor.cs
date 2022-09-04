@@ -12,7 +12,7 @@ namespace FieldSearch.Core.Inspectors.Editor
 
         BaseSearchableEditorConfigObject SearchableEditor => Settings.SearchableEditor;
 
-        bool IsActive => Settings.ApplyToAll;
+        bool IsActive => Settings?.ApplyToAll ?? false;
 
         private void OnEnable()
         {
