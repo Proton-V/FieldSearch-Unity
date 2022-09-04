@@ -1,9 +1,9 @@
-﻿using FieldSearch.Data.Criteria.Base;
-using FieldSearch.Helpers;
+﻿using FieldSearch.Core.Data.Criteria.Base;
+using FieldSearch.Helpers.StringFormatter;
 using UnityEditor;
 using static FieldSearch.Core.Base.BaseSearch;
 
-namespace FieldSearch.Data.Criteria
+namespace FieldSearch.Core.Data.Criteria
 {
 	public class ByFieldNameSearchCriterion : BaseSearchCriterion
 	{

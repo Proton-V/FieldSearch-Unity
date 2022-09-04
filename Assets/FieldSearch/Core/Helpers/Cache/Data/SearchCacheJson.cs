@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FieldSearch.Helpers.Data
+namespace FieldSearch.Helpers.Cache.Data
 {
     [Serializable]
     public struct SearchCacheJson

@@ -3,9 +3,9 @@
 namespace FieldSearch.Samples
 {
     /// <summary>
-    /// Sample monobehaviour with specific inspector
+    /// Sample monobehaviour without specific inspector
     /// </summary>
-    public class SampleSearchableMonoBehaviour : MonoBehaviour
+    public class SampleDefaultMonoBehaviour : MonoBehaviour
     {
         [SerializeField] private Transform Receiver;
         [SerializeField] private Transform Sender;

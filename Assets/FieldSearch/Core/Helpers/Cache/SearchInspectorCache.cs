@@ -1,10 +1,9 @@
-﻿using FieldSearch.Helpers.Data;
+﻿using FieldSearch.Helpers.Cache.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
-using UnityEngine;
 
-namespace FieldSearch.Helpers
+namespace FieldSearch.Helpers.Cache
 {
 	public class SearchInspectorCache
 	{

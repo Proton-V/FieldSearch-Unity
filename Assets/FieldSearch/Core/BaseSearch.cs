@@ -1,5 +1,4 @@
-﻿using FieldSearch.Data.Criteria.Base;
-using FieldSearch.Helpers;
+﻿using FieldSearch.Core.Data.Criteria.Base;
 using System.Collections.Generic;
 using System.Linq;
 

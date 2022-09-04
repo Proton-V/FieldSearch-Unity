@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-using static FieldSearch.Core.Base.BaseSearch;
+﻿using static FieldSearch.Core.Base.BaseSearch;
 
-namespace FieldSearch.Helpers
+namespace FieldSearch.Helpers.StringFormatter
 {
 	public class SearchStringFormatter
 	{

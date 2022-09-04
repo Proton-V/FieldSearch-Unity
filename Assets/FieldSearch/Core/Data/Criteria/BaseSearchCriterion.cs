@@ -1,6 +1,6 @@
 ﻿using static FieldSearch.Core.Base.BaseSearch;
 
-namespace FieldSearch.Data.Criteria.Base
+namespace FieldSearch.Core.Data.Criteria.Base
 {
 	public abstract class BaseSearchCriterion
 	{

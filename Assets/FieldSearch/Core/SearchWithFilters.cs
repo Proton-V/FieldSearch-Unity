@@ -1,5 +1,5 @@
 ﻿using FieldSearch.Core.Base;
-using FieldSearch.Data.Criteria;
+using FieldSearch.Core.Data.Criteria;
 using UnityEngine;
 
 namespace FieldSearch.Core

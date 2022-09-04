@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FieldSearch.Helpers.Data
+namespace FieldSearch.Helpers.Cache.Data
 {
     [Serializable]
     public struct SearchCacheObj
