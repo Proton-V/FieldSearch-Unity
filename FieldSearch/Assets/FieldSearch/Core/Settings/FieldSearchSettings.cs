@@ -118,25 +118,33 @@ namespace FieldSearch.Settings
         {
             var gitignorePath = Path.Combine(Application.dataPath, GlobalGitignorePath);
             var str = $"git config core.excludesfile {gitignorePath}";
-
-            Debug.LogError(str);
-            StartCmdProcess(str);
+            StartCmdProcess(GetDirectoryName(), str);
         }
 
         [MenuItem("Field Search/Remove package folders from .gitignore (global)")]
         public static void RemoveFromGlobalGitignore()
         {
             var str = $"git config --unset core.excludesfile";
-            StartCmdProcess(str);
+            StartCmdProcess(GetDirectoryName(), str);
         }
 
-        private static void StartCmdProcess(string cmdArgs)
+        private static string GetDirectoryName()
+        {
+            var path = Application.dataPath;
+
+            // Debug line for repo dev
+            //path = Path.GetDirectoryName(path);
+            return Path.GetDirectoryName(path);
+        }
+
+        private static void StartCmdProcess(string path, string cmdArgs)
         {
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.WindowStyle = ProcessWindowStyle.Normal;
+            startInfo.WorkingDirectory = path;
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = cmdArgs;
+            startInfo.Arguments = $"/C {cmdArgs}";
             process.StartInfo = startInfo;
             process.Start();
         }
