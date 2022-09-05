@@ -1,4 +1,4 @@
-# FieldSearch-Unity V1.0.0
+# FieldSearch-Unity V1.0.1
  
  ![image](https://user-images.githubusercontent.com/65833201/188505738-bd94910c-7cef-46c2-bad5-632436056de6.png)
  
@@ -27,7 +27,7 @@ If you want example of using SearchableEditor for specific MonoBehaviour please 
 
 ***Skip this if you installed this as package && you don't want to add a "FieldSearchDemo" folder***
 
-Download && Import [latest asset package V1.0.0](https://github.com/Proton-V/FieldSearch-Unity/releases/download/V1.0.0/FieldSearch-UnityV1.0.0.unitypackage)
+Download && Import [latest asset package V1.0.1](https://github.com/Proton-V/FieldSearch-Unity/releases/download/V1.0.1/FieldSearch-UnityV1.0.1.unitypackage)
 
 **"FieldSearchDemo" folder (optional) contains example of using SearchableEditor for specific MonoBehaviour**
 - [ ] Uncheck "FieldSearchDemo" folder **if you don't need it**.
