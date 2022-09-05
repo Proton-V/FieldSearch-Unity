@@ -15,11 +15,22 @@ namespace FieldSearch.Core.Data.Criteria
 
 		public override bool HasResult<T>(params T[] input)
 		{
+			if (input.Length < 2)
+			{
+				return false;
+			}
+
 			var rawSearchText = input[0] as string;
 			if (rawSearchText is null)
 			{
 				return false;
 			}
+
+			if (input[1]?.GetType() != typeof(object))
+			{
+				return false;
+			}
+
 			var finalSearchText = SearchStringFormatter.GetFinalString(rawSearchText, searchFilter);
 			var serializedProperty = input[1] as SerializedProperty;
 
