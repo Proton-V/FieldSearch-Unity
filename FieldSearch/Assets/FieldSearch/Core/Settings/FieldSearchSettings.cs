@@ -1,5 +1,4 @@
 ﻿using FieldSearch.Core.Inspectors;
-using FieldSearch.Core.Inspectors.Base;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -7,7 +6,6 @@ using UnityEngine;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using System;
-using Unity.Collections;
 
 namespace FieldSearch.Settings
 {
@@ -84,6 +82,33 @@ namespace FieldSearch.Settings
             return AssetDatabase.LoadAssetAtPath<FieldSearchSettings>(path);
         }
 
+        [MenuItem("Field Search/ShowSettings")]
+        public static void ShowSettings()
+        {
+            var settings = CreateInstance<FieldSearchSettings>();
+
+            var directoryPath = "Assets/FieldSearchConfigs";
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            settings.searchEditorTypeQualifiedName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
+
+            string path = $"{directoryPath}/FieldSearch Settings.asset";
+            AssetDatabase.CreateAsset(settings, path);
+            AssetDatabase.SaveAssets();
+
+            Selection.activeObject = settings;
+            EditorGUIUtility.PingObject(settings);
+        }
+
+        [MenuItem("Field Search/ShowSettings", true)]
+        static bool ValidateShowSettings()
+        {
+            return Instance != null;
+        }
+
         [MenuItem("Field Search/Add default settings (override if exists)")]
         public static void CreateSettingsObject()
         {
@@ -103,6 +128,12 @@ namespace FieldSearch.Settings
 
             Selection.activeObject = settings;
             EditorGUIUtility.PingObject(settings);
+        }
+
+        [MenuItem("Field Search/Add default settings (override if exists)", true)]
+        static bool ValidateCreateSettingsObject()
+        {
+            return Instance == null;
         }
 
         [MenuItem("Field Search/Add package folders to .gitignore (global)")]
