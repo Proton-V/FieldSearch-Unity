@@ -5,7 +5,7 @@ using UnityEditor;
 namespace FieldSearch.Samples.Editor
 {
     [CustomEditor(typeof(SampleSearchableMonoBehaviour))]
-    public class SampleSearchableMonoBehaviourEditor : BaseSearchableEditor<DefaultSearchableEditorConfigObject>
+    public class SampleSearchableMonoBehaviourEditor : BaseSearchableEditor<DefaultSearchLayerInspector>
     {
         public override void OnInspectorGUI()
         {

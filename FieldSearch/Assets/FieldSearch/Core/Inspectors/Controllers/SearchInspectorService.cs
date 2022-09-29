@@ -4,11 +4,11 @@ using UnityEditor;
 using UnityEngine;
 using static FieldSearch.Core.Base.BaseSearch;
 
-namespace FieldSearch.Core.Inspectors
+namespace FieldSearch.Core.Inspectors.Controllers
 {
-	public class SearchInspector
+	public class SearchInspectorService
 	{
-		public SearchInspector(SerializedObject serializedObject)
+		public SearchInspectorService(SerializedObject serializedObject)
 		{
 			searchFilters =
 				SearchFilter.IgnoreCase |
@@ -47,11 +47,8 @@ namespace FieldSearch.Core.Inspectors
 				this.searchText = searchText;
 			}
 
-			if (searchFilters != SearchFilter.None)
-			{
-				this.searchFilters = searchFilters;
-				search.UpdateCriteria(ref this.searchFilters);
-			}
+			this.searchFilters = searchFilters;
+			search.UpdateCriteria(ref this.searchFilters);
 
 			serializedObject?.ApplyModifiedProperties();
 		}
