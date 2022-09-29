@@ -9,7 +9,7 @@ namespace FieldSearch.Core.Inspectors.Editor
     public class FieldSearchGlobalEditor : UnityEditor.Editor
     {
         FieldSearchSettings Settings => FieldSearchSettings.Instance;
-        Type SearchEditorType => Settings.SearchEditorType;
+        Type SearchLayerInspectorType => Settings.SearchLayerInspectorType;
 
         UnityEditor.Editor searchLayerInspector;
 
@@ -19,7 +19,7 @@ namespace FieldSearch.Core.Inspectors.Editor
         {
             if (IsActive)
             {
-                searchLayerInspector = CreateEditor(target, SearchEditorType);
+                searchLayerInspector = CreateEditor(target, SearchLayerInspectorType);
             }
         }
 

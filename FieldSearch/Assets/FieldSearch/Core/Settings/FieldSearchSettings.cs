@@ -6,6 +6,8 @@ using UnityEngine;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using System;
+using FieldSearch.Core.Inspectors.Base;
+using FieldSearch.Core.Attributes;
 
 namespace FieldSearch.Settings
 {
@@ -32,8 +34,8 @@ namespace FieldSearch.Settings
         [SerializeField]
         private bool applyToAll = true;
 
-        [SerializeField]
-        private string searchEditorTypeQualifiedName;
+        [SerializeField, TypeRefDropdown(typeof(BaseSearchLayerInspector))]
+        private string searchLayerTypeName;
 
         [Header("Cache settings")]
         [SerializeField]
@@ -45,7 +47,7 @@ namespace FieldSearch.Settings
 
         public bool ApplyToAll => applyToAll;
 
-        public Type SearchEditorType => Type.GetType(searchEditorTypeQualifiedName);
+        public Type SearchLayerInspectorType => Type.GetType(searchLayerTypeName);
 
         public bool SaveToDisk => saveToDisk;
 
@@ -93,7 +95,7 @@ namespace FieldSearch.Settings
                 Directory.CreateDirectory(directoryPath);
             }
 
-            settings.searchEditorTypeQualifiedName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
+            settings.searchLayerTypeName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
 
             string path = $"{directoryPath}/FieldSearch Settings.asset";
             AssetDatabase.CreateAsset(settings, path);
@@ -120,7 +122,7 @@ namespace FieldSearch.Settings
                 Directory.CreateDirectory(directoryPath);
             }
             
-            settings.searchEditorTypeQualifiedName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
+            settings.searchLayerTypeName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
 
             string path = $"{directoryPath}/FieldSearch Settings.asset";
             AssetDatabase.CreateAsset(settings, path);
