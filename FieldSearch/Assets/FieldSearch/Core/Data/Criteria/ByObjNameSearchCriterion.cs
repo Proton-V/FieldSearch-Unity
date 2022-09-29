@@ -26,27 +26,34 @@ namespace FieldSearch.Core.Data.Criteria
 				return false;
 			}
 
-			if (input[1]?.GetType() != typeof(object))
-			{
-				return false;
-			}
-
 			var finalSearchText = SearchStringFormatter.GetFinalString(rawSearchText, searchFilter);
-			var serializedProperty = input[1] as SerializedProperty;
-
-			if(serializedProperty == null ||
-				serializedProperty.objectReferenceValue == null)
+            
+			try
             {
-				return false;
-            }
+				if (input[1] is SerializedProperty == false)
+				{
+					return false;
+				}
 
-			if (ByObjName && serializedProperty.propertyType == SerializedPropertyType.ObjectReference)
-			{
-				return StartWith ?
-				SearchStringFormatter.GetFinalString(serializedProperty.objectReferenceValue.name, searchFilter)
-				.StartsWith(finalSearchText)
-				: SearchStringFormatter.GetFinalString(serializedProperty.objectReferenceValue.name, searchFilter)
-				.Contains(finalSearchText);
+				var serializedProperty = input[1] as SerializedProperty;
+
+				if(serializedProperty == null
+					|| serializedProperty.propertyType != SerializedPropertyType.ObjectReference)
+                {
+					return false;
+                }
+
+				if (ByObjName)
+				{
+					var finalString = SearchStringFormatter.GetFinalString(serializedProperty.objectReferenceValue.name, searchFilter);
+					return StartWith ?
+					finalString.StartsWith(finalSearchText)
+					: finalString.Contains(finalSearchText);
+				}
+			}
+            catch
+            {
+				// TODO: check SerializedProperty pptr error && update logic
 			}
 
 			return false;
