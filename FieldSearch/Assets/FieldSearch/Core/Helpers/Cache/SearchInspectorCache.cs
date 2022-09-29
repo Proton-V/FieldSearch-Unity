@@ -1,5 +1,6 @@
 ﻿using FieldSearch.Helpers.Cache.Data;
 using FieldSearch.Settings;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -37,16 +38,16 @@ namespace FieldSearch.Helpers.Cache
 
 		public static float GetCurrentSize() => inspectorsDict.Sum(x => Marshal.SizeOf(x.Value));
 
-		protected static Dictionary<int, SearchCacheObj> inspectorsDict
-			= new Dictionary<int, SearchCacheObj>();
+		protected static ConcurrentDictionary<int, SearchCacheObj> inspectorsDict
+			= new ConcurrentDictionary<int, SearchCacheObj>();
 
 		protected static FieldSearchSettings Settings => FieldSearchSettings.Instance;
 
-		public static void AddValue(SearchCacheObj val)
+		public static bool TryAddValue(SearchCacheObj val)
 		{
             if (!HasFreeMemorySlots())
             {
-				RemoveFirstValue();
+				TryRemoveFirstValue();
 			}
 
 			var id = val.id;
@@ -54,31 +55,32 @@ namespace FieldSearch.Helpers.Cache
 			if (inspectorsDict.ContainsKey(id))
 			{
 				inspectorsDict[id] = val;
+				return true;
 			}
 			else
 			{
-				inspectorsDict.Add(id, val);
+				return inspectorsDict.TryAdd(id, val);
 			}
 		}
 
-		public static void RemoveValue(int id)
+		public static bool TryRemoveValue(int id)
 		{
 			if (inspectorsDict.ContainsKey(id))
 			{
-				inspectorsDict.Remove(id);
+				SearchCacheObj obj;
+				return inspectorsDict.TryRemove(id, out obj);
 			}
+			return false;
 		}
 
-		public static SearchCacheObj TryGetValue(int id)
+		public static bool TryGetValue(int id, out SearchCacheObj obj)
 		{
-			SearchCacheObj res;
-			inspectorsDict.TryGetValue(id, out res);
-            return res;
+            return inspectorsDict.TryGetValue(id, out obj);
 		}
 
-		private static void RemoveFirstValue()
+		private static bool TryRemoveFirstValue()
         {
-			inspectorsDict.Remove(inspectorsDict.Keys.First());
+			return TryRemoveValue(inspectorsDict.Keys.First());
         }
 
 		private static bool HasFreeMemorySlots()
@@ -124,7 +126,7 @@ namespace FieldSearch.Helpers.Cache
                 }
 
 				var obj = JsonUtility.FromJson<SearchCacheJson>(str);
-				inspectorsDict = obj.ToDictionary();
+				inspectorsDict = obj.ToConcurrentDictionary();
 			}
 		}
 
