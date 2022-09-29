@@ -4,28 +4,23 @@ using FieldSearch.Core.Inspectors.Base;
 namespace FieldSearch.Core.Inspectors.Editor.Base
 {
     public abstract class BaseSearchableEditor<T> : UnityEditor.Editor
-    where T : BaseSearchableEditorConfigObject
+    where T : BaseSearchLayerInspector
     {
-        protected T searchableEditorObject;
+        protected UnityEditor.Editor searchLayerInspector;
 
         protected void OnEnable()
         {
-            if (searchableEditorObject == null)
-            {
-                searchableEditorObject = (T)Activator.CreateInstance(typeof(T));
-            }
-
-            searchableEditorObject.OnEnableInspector(target, serializedObject);
+            searchLayerInspector = CreateEditor(target, typeof(T));
         }
 
-        protected void OnDisable()
+        private void OnDisable()
         {
-            searchableEditorObject.OnDisableInspector(target);
+            DestroyImmediate(searchLayerInspector);
         }
 
         public override void OnInspectorGUI()
         {
-            searchableEditorObject.OnInspectorGUI(serializedObject, base.OnInspectorGUI);
+            searchLayerInspector?.OnInspectorGUI();
         }
     }
 }

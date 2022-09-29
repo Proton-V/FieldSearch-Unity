@@ -1,11 +1,13 @@
 ﻿using FieldSearch.Core.Inspectors;
-using FieldSearch.Core.Inspectors.Base;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
+using System;
+using FieldSearch.Core.Inspectors.Base;
+using FieldSearch.Core.Attributes;
 
 namespace FieldSearch.Settings
 {
@@ -32,8 +34,8 @@ namespace FieldSearch.Settings
         [SerializeField]
         private bool applyToAll = true;
 
-        [SerializeField]
-        private DefaultSearchableEditorConfigObject searchableEditor;
+        [SerializeField, TypeRefDropdown(typeof(BaseSearchLayerInspector))]
+        private string searchLayerTypeName;
 
         [Header("Cache settings")]
         [SerializeField]
@@ -45,7 +47,7 @@ namespace FieldSearch.Settings
 
         public bool ApplyToAll => applyToAll;
 
-        public BaseSearchableEditorConfigObject SearchableEditor => searchableEditor;
+        public Type SearchLayerInspectorType => Type.GetType(searchLayerTypeName);
 
         public bool SaveToDisk => saveToDisk;
 
@@ -82,6 +84,19 @@ namespace FieldSearch.Settings
             return AssetDatabase.LoadAssetAtPath<FieldSearchSettings>(path);
         }
 
+        [MenuItem("Field Search/ShowSettings")]
+        public static void ShowSettings()
+        {
+            Selection.activeObject = Instance;
+            EditorGUIUtility.PingObject(Instance);
+        }
+
+        [MenuItem("Field Search/ShowSettings", true)]
+        static bool ValidateShowSettings()
+        {
+            return Instance != null;
+        }
+
         [MenuItem("Field Search/Add default settings (override if exists)")]
         public static void CreateSettingsObject()
         {
@@ -93,9 +108,7 @@ namespace FieldSearch.Settings
                 Directory.CreateDirectory(directoryPath);
             }
             
-            var configPath = $"{directoryPath}/DefaultSearchableEditorConfigObject.asset";
-            var config = CreateDefaultSearchableEditorConfig(configPath);
-            settings.searchableEditor = config;
+            settings.searchLayerTypeName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
 
             string path = $"{directoryPath}/FieldSearch Settings.asset";
             AssetDatabase.CreateAsset(settings, path);
@@ -105,12 +118,10 @@ namespace FieldSearch.Settings
             EditorGUIUtility.PingObject(settings);
         }
 
-        private static DefaultSearchableEditorConfigObject CreateDefaultSearchableEditorConfig(string path)
+        [MenuItem("Field Search/Add default settings (override if exists)", true)]
+        static bool ValidateCreateSettingsObject()
         {
-            var config = CreateInstance<DefaultSearchableEditorConfigObject>();
-            AssetDatabase.CreateAsset(config, path);
-
-            return config;
+            return Instance == null;
         }
 
         [MenuItem("Field Search/Add package folders to .gitignore (global)")]

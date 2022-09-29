@@ -1,5 +1,5 @@
-﻿using FieldSearch.Core.Inspectors.Base;
-using FieldSearch.Settings;
+﻿using FieldSearch.Settings;
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,8 +9,9 @@ namespace FieldSearch.Core.Inspectors.Editor
     public class FieldSearchGlobalEditor : UnityEditor.Editor
     {
         FieldSearchSettings Settings => FieldSearchSettings.Instance;
+        Type SearchLayerInspectorType => Settings.SearchLayerInspectorType;
 
-        BaseSearchableEditorConfigObject SearchableEditor => Settings.SearchableEditor;
+        UnityEditor.Editor searchLayerInspector;
 
         bool IsActive => Settings?.ApplyToAll ?? false;
 
@@ -18,7 +19,7 @@ namespace FieldSearch.Core.Inspectors.Editor
         {
             if (IsActive)
             {
-                SearchableEditor.OnEnableInspector(target, serializedObject);
+                searchLayerInspector = CreateEditor(target, SearchLayerInspectorType);
             }
         }
 
@@ -26,7 +27,7 @@ namespace FieldSearch.Core.Inspectors.Editor
         {
             if (IsActive)
             {
-                SearchableEditor.OnDisableInspector(target);
+                DestroyImmediate(searchLayerInspector);
             }
         }
 
@@ -34,7 +35,7 @@ namespace FieldSearch.Core.Inspectors.Editor
         {
             if (IsActive)
             {
-                SearchableEditor.OnInspectorGUI(serializedObject, base.OnInspectorGUI);
+                searchLayerInspector?.OnInspectorGUI();
             }
             else
             {
