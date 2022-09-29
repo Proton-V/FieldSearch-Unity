@@ -87,22 +87,8 @@ namespace FieldSearch.Settings
         [MenuItem("Field Search/ShowSettings")]
         public static void ShowSettings()
         {
-            var settings = CreateInstance<FieldSearchSettings>();
-
-            var directoryPath = "Assets/FieldSearchConfigs";
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
-
-            settings.searchLayerTypeName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
-
-            string path = $"{directoryPath}/FieldSearch Settings.asset";
-            AssetDatabase.CreateAsset(settings, path);
-            AssetDatabase.SaveAssets();
-
-            Selection.activeObject = settings;
-            EditorGUIUtility.PingObject(settings);
+            Selection.activeObject = Instance;
+            EditorGUIUtility.PingObject(Instance);
         }
 
         [MenuItem("Field Search/ShowSettings", true)]
