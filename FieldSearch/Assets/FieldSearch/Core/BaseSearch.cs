@@ -16,25 +16,26 @@ namespace FieldSearch.Core.Base
 			ByObjName = 8
 		}
 
-		public BaseSearch()
+		public BaseSearch(SearchFilter currentFlags)
 		{
 			baseSearchCriteria = new List<BaseSearchCriterion>();
+			CreateCriteria(currentFlags);
 		}
 
 		private List<BaseSearchCriterion> baseSearchCriteria;
 
-		public void UpdateCriteria(ref SearchFilter searchFilter)
-		{
-			ClearCriteria();
-			CreateCriteria(ref searchFilter);
-		}
+        public void UpdateCriteria(SearchFilter currentFlags)
+        {
+            ClearCriteria();
+            CreateCriteria(currentFlags);
+        }
 
-		public abstract bool CreateCriteria(ref SearchFilter searchFilter);
+        protected abstract bool CreateCriteria(SearchFilter currentFlags);
 
-		public bool GetResult(bool any = false, params object[] input)
+		public bool GetResult(SearchFilter currentFlags, bool any = false, params object[] input)
 		{
-			return any ? baseSearchCriteria.Any(x => x.HasResult(input))
-				: baseSearchCriteria.All(x => x.HasResult(input));
+			return any ? baseSearchCriteria.Any(x => x.HasResult(currentFlags, input))
+				: baseSearchCriteria.All(x => x.HasResult(currentFlags, input));
 		}
 
 		protected void AddCriterion(BaseSearchCriterion baseSearchCriterion)

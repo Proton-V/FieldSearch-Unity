@@ -6,25 +6,24 @@ namespace FieldSearch.Core
 {
 	public class SearchWithFilters : BaseSearch
 	{
-		public SearchWithFilters(ref SearchFilter searchFilter) : base()
+		public SearchWithFilters(SearchFilter currentFlags) : base(currentFlags)
 		{
-			CreateCriteria(ref searchFilter);
+			CreateCriteria(currentFlags);
 		}
 
-		public override bool CreateCriteria(ref SearchFilter searchFilter)
+		protected override bool CreateCriteria(SearchFilter currentFlags)
 		{
 			try
 			{
-				if (searchFilter.HasFlag(SearchFilter.ByFieldName))
-				{
-					AddCriterion(new ByFieldNameSearchCriterion(ref searchFilter));
-				}
+				if (currentFlags.HasFlag(ByFieldNameSearchCriterion.CRITERION_SEARCH_FILTER))
+                {
+					AddCriterion(new ByFieldNameSearchCriterion());
+                }
 
-				if (searchFilter.HasFlag(SearchFilter.ByObjName))
-				{
-					AddCriterion(new ByObjNameSearchCriterion(ref searchFilter));
+                if(currentFlags.HasFlag(ByObjNameSearchCriterion.CRITERION_SEARCH_FILTER))
+                {
+					AddCriterion(new ByObjNameSearchCriterion());
 				}
-
 				return true;
 			}
 			catch (System.Exception e)

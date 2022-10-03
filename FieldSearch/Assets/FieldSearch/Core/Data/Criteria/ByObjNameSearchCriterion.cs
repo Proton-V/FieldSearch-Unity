@@ -1,5 +1,4 @@
 ﻿using FieldSearch.Core.Data.Criteria.Base;
-using FieldSearch.Helpers.StringFormatter;
 using UnityEditor;
 using static FieldSearch.Core.Base.BaseSearch;
 
@@ -7,14 +6,19 @@ namespace FieldSearch.Core.Data.Criteria
 {
 	public class ByObjNameSearchCriterion : BaseSearchCriterion
 	{
-		public ByObjNameSearchCriterion(ref SearchFilter searchFilter)
-			: base(ref searchFilter) { }
+		public const SearchFilter CRITERION_SEARCH_FILTER = SearchFilter.ByObjName;
 
-		bool StartWith => searchFilter.HasFlag(SearchFilter.StartWith);
-		bool ByObjName => searchFilter.HasFlag(SearchFilter.ByObjName);
+		public ByObjNameSearchCriterion() : base() { }
 
-		public override bool HasResult<T>(params T[] input)
+		protected override SearchFilter GetCriterionSearchFilter() => CRITERION_SEARCH_FILTER;
+
+		public override bool HasResult<T>(SearchFilter currentFlags, params T[] input)
 		{
+			if (!IsActive(currentFlags))
+			{
+				return false;
+			}
+
 			if (input.Length < 2)
 			{
 				return false;
@@ -25,8 +29,6 @@ namespace FieldSearch.Core.Data.Criteria
 			{
 				return false;
 			}
-
-			var finalSearchText = SearchStringFormatter.GetFinalString(rawSearchText, searchFilter);
             
 			try
             {
@@ -43,13 +45,7 @@ namespace FieldSearch.Core.Data.Criteria
 					return false;
                 }
 
-				if (ByObjName)
-				{
-					var finalString = SearchStringFormatter.GetFinalString(serializedProperty.objectReferenceValue.name, searchFilter);
-					return StartWith ?
-					finalString.StartsWith(finalSearchText)
-					: finalString.Contains(finalSearchText);
-				}
+				return Compare(serializedProperty.objectReferenceValue.name, rawSearchText, currentFlags);
 			}
             catch
             {
@@ -58,5 +54,5 @@ namespace FieldSearch.Core.Data.Criteria
 
 			return false;
 		}
-	}
+    }
 }

@@ -17,7 +17,7 @@ namespace FieldSearch.Core.Inspectors.Controllers
 				SearchFilter.ByFieldName |
 				SearchFilter.ByObjName;
 
-			search = new SearchWithFilters(ref searchFilters);
+			search = new SearchWithFilters(searchFilters);
 			this.serializedObject = serializedObject;
 		}
 
@@ -50,7 +50,7 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			}
 
 			this.searchFilters = searchFilters;
-			search.UpdateCriteria(ref this.searchFilters);
+			search.UpdateCriteria(this.searchFilters);
 
 			serializedObject?.ApplyModifiedProperties();
 		}
@@ -110,13 +110,13 @@ namespace FieldSearch.Core.Inspectors.Controllers
                 if (prop.isArray)
                 {
 					var childProps = GetSerializedPropertyRecursive(prop,
-						x => search.GetResult(true, searchText, x));
+						x => search.GetResult(searchFilters, true, searchText, x));
 
 					properties.AddRange(childProps);
 					continue;
                 }
 
-                if (!prop.isArray && search.GetResult(true, searchText, prop))
+                if (!prop.isArray && search.GetResult(searchFilters, true, searchText, prop))
                 {
 					properties.Add(prop);
 					continue;
@@ -206,7 +206,7 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			if (searchFiltersChanged)
 			{
 				serializedObject?.ApplyModifiedProperties();
-				search.UpdateCriteria(ref searchFilters);
+				search.UpdateCriteria(searchFilters);
 			}
 
 			if (searchTextChanged || string.IsNullOrEmpty(searchText))
