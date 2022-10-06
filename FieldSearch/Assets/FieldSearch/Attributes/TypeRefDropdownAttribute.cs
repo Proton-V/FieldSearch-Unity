@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace FieldSearch.Core.Attributes
+namespace FieldSearch.Attributes
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class TypeRefDropdownAttribute : PropertyAttribute

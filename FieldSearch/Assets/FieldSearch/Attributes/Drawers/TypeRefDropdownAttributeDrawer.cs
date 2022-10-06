@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace FieldSearch.Core.Attributes.Drawers
+namespace FieldSearch.Attributes.Drawers
 {
     [CustomPropertyDrawer(typeof(TypeRefDropdownAttribute))]
     public class TypeRefDropdownAttributeDrawer : PropertyDrawer

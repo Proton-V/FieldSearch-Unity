@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using System;
 using FieldSearch.Core.Inspectors.Base;
-using FieldSearch.Core.Attributes;
+using FieldSearch.Attributes;
 
 namespace FieldSearch.Settings
 {
