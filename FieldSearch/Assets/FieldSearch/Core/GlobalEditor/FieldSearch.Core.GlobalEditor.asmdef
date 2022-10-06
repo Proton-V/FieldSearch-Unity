@@ -1,0 +1,16 @@
+{
+    "name": "FieldSearch.Core.GlobalEditor",
+    "references": [
+        "FieldSearch.Core"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

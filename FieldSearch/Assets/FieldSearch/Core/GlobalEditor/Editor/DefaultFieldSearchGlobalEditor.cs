@@ -3,17 +3,16 @@ using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
-using Inspector = UnityEditor.Editor;
 
-namespace FieldSearch.Core.Inspectors.Editor
+namespace FieldSearch.Core.GlobalEditor
 {
     [CustomEditor(typeof(MonoBehaviour), true, isFallback = true)]
-    public class FieldSearchGlobalEditor : Inspector
+    public class DefaultFieldSearchGlobalEditor : BaseFieldSearchGlobalEditor
     {
         FieldSearchSettings Settings => FieldSearchSettings.Instance;
         Type SearchLayerInspectorType => Settings.SearchLayerInspectorType;
 
-        Inspector searchLayerInspector;
+        Editor searchLayerInspector;
 
         bool IsActive => Settings?.ApplyToAll ?? false;
 
@@ -46,10 +45,14 @@ namespace FieldSearch.Core.Inspectors.Editor
         }
     }
 
-    public abstract class FieldSearchGlobalEditor<T> : Inspector where T : Inspector
+    /// <summary>
+    /// Abstract <see cref="DefaultFieldSearchGlobalEditor"/> to save default Inspector
+    /// </summary>
+    /// <typeparam name="T">Default inspector</typeparam>
+    public abstract class DefaultFieldSearchGlobalEditor<T> : BaseFieldSearchGlobalEditor where T : Editor
     {
-        Inspector searchableGlobalEditor;
-        Inspector defaultEditor;
+        Editor searchableGlobalEditor;
+        Editor defaultEditor;
 
         private void OnEnable()
         {
@@ -64,7 +67,7 @@ namespace FieldSearch.Core.Inspectors.Editor
 
         private void InitSearchableInspector()
         {
-            searchableGlobalEditor = CreateEditor(target, typeof(FieldSearchGlobalEditor));
+            searchableGlobalEditor = CreateEditor(target, typeof(DefaultFieldSearchGlobalEditor));
             defaultEditor = CreateEditor(target, typeof(T));
         }
 
