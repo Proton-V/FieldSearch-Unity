@@ -10,7 +10,7 @@ namespace CodeGeneration.Base
     public abstract class BaseCodeGenerator<T> where T : BaseScriptTemplate
     {
         [SerializeField]
-        private BaseCodeGeneratorSettings _settings;
+        private BaseCodeGeneratorSettings<T> _settings;
 
         public abstract void CreateScripts(T scriptTemplate, params Type[] inputTypes);
     }

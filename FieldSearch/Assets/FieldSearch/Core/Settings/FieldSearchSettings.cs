@@ -11,7 +11,7 @@ using FieldSearch.Attributes;
 
 namespace FieldSearch.Settings
 {
-    [CreateAssetMenu(fileName = "FieldSearch Settings", menuName = "ScriptableObjects/FieldSearch/Settings")]
+    [CreateAssetMenu(fileName = "FieldSearch Settings", menuName = "ScriptableObjects/FieldSearch/Settings", order = -1)]
     public class FieldSearchSettings : ScriptableObject
     {
         private const string GlobalGitignorePath = "FieldSearch/gitignore.global";

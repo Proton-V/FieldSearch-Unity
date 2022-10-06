@@ -5,15 +5,16 @@ using UnityEngine;
 
 namespace CodeGeneration.Base
 {
-    public abstract class BaseCodeGeneratorSettings : ScriptableObject
+    public abstract class BaseCodeGeneratorSettings<T> : ScriptableObject where T : BaseScriptTemplate
     {
         public string DefaultFileFolder =>
             Path.Combine(Environment.CurrentDirectory, _defaultFileFolder);
 
+        [Tooltip("Default relative folder path")]
         [SerializeField]
         protected string _defaultFileFolder;
         [SerializeField]
-        protected BaseScriptTemplate _defaultScriptTemplate;
+        protected T _defaultScriptTemplate;
 
         public string FullFileFolder(string relativePath) =>
             Path.Combine(Environment.CurrentDirectory, relativePath);

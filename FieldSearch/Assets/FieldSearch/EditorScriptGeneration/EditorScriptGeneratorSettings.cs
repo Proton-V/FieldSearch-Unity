@@ -1,9 +1,12 @@
 ﻿using CodeGeneration.Base;
+using FieldSearch.EditorScriptGeneration.Templates;
+using UnityEngine;
 
 namespace FieldSearch.EditorScriptGeneration
 {
-    public class EditorScriptGeneratorSettings : BaseCodeGeneratorSettings
+    [CreateAssetMenu(fileName = "EditorScriptGenerator Settings", menuName = "ScriptableObjects/FieldSearch/EditorScriptGenerator/Settings")]
+    public class EditorScriptGeneratorSettings : BaseCodeGeneratorSettings<BaseEditorScriptTemplate>
     {
-        /*"Assets", "Generated_FieldSearch", "Editor"*/
+
     }
 }
