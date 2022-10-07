@@ -10,6 +10,9 @@ namespace FieldSearch.Settings
     [CreateAssetMenu(fileName = "FieldSearch Settings", menuName = "ScriptableObjects/FieldSearch/Settings", order = -1)]
     public class FieldSearchSettings : BaseFieldSearchSettings
     {
+        public EditorScriptGeneratorSettings EditorScriptGeneratorSettings =>
+            _editorScriptGeneratorSettings;
+
         [Header("EditorScriptGenerator Settings")]
         [SerializeField]
         private EditorScriptGeneratorSettings _editorScriptGeneratorSettings;

@@ -11,11 +11,16 @@ namespace FieldSearch.EditorScriptGeneration
         public EditorScriptGenerator(BaseCodeGeneratorSettings<BaseEditorScriptTemplate> settings)
             : base(settings) { }
 
-        public override void CreateScripts(BaseEditorScriptTemplate scriptTemplate, params Type[] inputTypes)
+        public override void CreateScripts(BaseEditorScriptTemplate scriptTemplate = null, params Type[] inputTypes)
         {
+            if (scriptTemplate == null)
+            {
+                scriptTemplate = _settings.DefaultScriptTemplate;
+            }
+
             foreach (var editorType in inputTypes)
             {
-                if (editorType != typeof(Editor))
+                if (!editorType.IsSubclassOf(typeof(UnityEditor.Editor)))
                 {
                     continue;
                 }
@@ -24,6 +29,10 @@ namespace FieldSearch.EditorScriptGeneration
 
                 CodeGenerationUtils.SaveToFile(_settings.DefaultFileFolder, script);
             }
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            AssetDatabase.ForceReserializeAssets();
         }
     }
 }

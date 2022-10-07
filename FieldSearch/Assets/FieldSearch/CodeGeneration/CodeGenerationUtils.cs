@@ -9,6 +9,32 @@ namespace CodeGeneration
 {
     public class CodeGenerationUtils
     {
+        public static Type[] GetAllInheritedTypes(Type baseType, Assembly[] assemblies = default, 
+            Func<string, bool> ValidateNamespaceFunc = default)
+        {
+            if(assemblies == default)
+            {
+                assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            }
+
+            if(ValidateNamespaceFunc == default)
+            {
+                ValidateNamespaceFunc = (name) => true;
+            }
+
+            var types = 
+                assemblies
+                .SelectMany(x => x
+                    .GetTypes()
+                    .Where(type =>
+                        type.IsPublic
+                        && type.IsClass
+                        && !type.IsAbstract
+                        && type.IsSubclassOf(baseType)
+                        && ValidateNamespaceFunc(type.Namespace)));
+            return types.ToArray();
+        }
+
         public static FieldInfo GetFirstAttributeFieldByType<T>(Attribute attribute) where T : Type
         {
             var field = attribute.GetType()
@@ -28,6 +54,16 @@ namespace CodeGeneration
         {
             try
             {
+                if(generatedScript?.fileName == null)
+                {
+                    return false;
+                }
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
                 var path = Path.Combine(folderPath, generatedScript.fileName);
                 File.WriteAllText(path, generatedScript.scriptStr);
                 return true;

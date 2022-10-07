@@ -2,6 +2,7 @@
 using CodeGeneration.Data;
 using System;
 using System.IO;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,13 +26,10 @@ namespace FieldSearch.EditorScriptGeneration.Templates
 
                 if (editorTargetType != null)
                 {
-                    Debug.LogError(editorTargetType.Name);
-                    Debug.LogError(type.Name);
-
                     var newEditor = DefaultBaseEditorType;
 
                     var newEditorTypeNamespaceLine = string.IsNullOrEmpty(newEditor.Namespace) ?
-                        string.Empty : $"using {editorTargetType.Namespace};";
+                        string.Empty : $"using {newEditor.Namespace};";
                     var targetTypeNamespaceLine = string.IsNullOrEmpty(editorTargetType.Namespace) ?
                         string.Empty : $"using {editorTargetType.Namespace};";
                     var editorTypeNamespaceLine = string.IsNullOrEmpty(type.Namespace) ?
@@ -48,7 +46,7 @@ namespace FieldSearch.EditorScriptGeneration.Templates
                         editorTargetType.Name,
                         newScriptName,
                         newEditor.Name,
-                        editorTargetType.Name,
+                        type.Name,
                     };
 
                     var scriptStr = string.Format(_scriptFormatString, scriptArgs);
