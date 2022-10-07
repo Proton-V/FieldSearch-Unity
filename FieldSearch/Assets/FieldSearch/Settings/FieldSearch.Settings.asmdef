@@ -1,0 +1,17 @@
+{
+    "name": "FieldSearch.Settings",
+    "references": [
+        "FieldSearch.Core",
+        "FieldSearch.EditorScriptGeneration"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

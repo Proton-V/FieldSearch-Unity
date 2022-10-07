@@ -33,6 +33,8 @@ namespace FieldSearch.Attributes.Drawers
             if (EditorGUI.EndChangeCheck())
             {
                 property.stringValue = target.InheritedTypeNameArray[currentTypeIndex];
+                property.serializedObject.ApplyModifiedProperties();
+                property.serializedObject.Update();
             }
         }
 

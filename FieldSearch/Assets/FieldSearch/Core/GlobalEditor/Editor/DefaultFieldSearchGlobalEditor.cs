@@ -1,4 +1,4 @@
-﻿using FieldSearch.Settings;
+﻿using FieldSearch.Settings.Base;
 using System;
 using System.Reflection;
 using UnityEditor;
@@ -9,7 +9,7 @@ namespace FieldSearch.Core.GlobalEditor
     [CustomEditor(typeof(MonoBehaviour), true, isFallback = true)]
     public class DefaultFieldSearchGlobalEditor : BaseFieldSearchGlobalEditor
     {
-        FieldSearchSettings Settings => FieldSearchSettings.Instance;
+        BaseFieldSearchSettings Settings => BaseFieldSearchSettings.Instance;
         Type SearchLayerInspectorType => Settings.SearchLayerInspectorType;
 
         Editor searchLayerInspector;
