@@ -13,7 +13,8 @@ namespace FieldSearch.Attributes
         {
             BaseType = baseType;
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            var types = GetInheritedTypes(BaseType, assemblies);
+            var types = GetInheritedTypes(BaseType, assemblies)
+                .Where(x => !x.IsAbstract);
             InheritedTypeNameArray = types.Select(x => x.AssemblyQualifiedName).ToArray();
             ShortInheritedTypeNameArray = types.Select(x => x.Name).ToArray();
         }
@@ -28,12 +29,11 @@ namespace FieldSearch.Attributes
             foreach (Type type in
                 assemblies.SelectMany(x => x.GetTypes())
                 .Where(x => x.IsSubclassOf(baseType)
-                && x.IsClass
-                && !x.IsAbstract))
+                && x.IsClass))
             {
                 types.Add(type);
             }
-            types.Sort();
+            types.Sort(new TypeComparer());
 
             return types;
         }
