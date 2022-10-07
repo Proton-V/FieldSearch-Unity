@@ -61,14 +61,14 @@ namespace FieldSearch.Settings
         public static void AddToGlobalGitignore()
         {
             var gitignorePath = Path.Combine(Application.dataPath, GlobalGitignorePath);
-            var str = $"git config core.excludesfile {gitignorePath}";
+            var str = $"git config --global core.excludesfile {gitignorePath}";
             StartCmdProcess(GetDirectoryName(), str);
         }
 
         [MenuItem("Field Search/Remove package folders from .gitignore (global)")]
         public static void RemoveFromGlobalGitignore()
         {
-            var str = $"git config --unset core.excludesfile";
+            var str = $"git config --global --unset core.excludesfile";
             StartCmdProcess(GetDirectoryName(), str);
         }
     }
