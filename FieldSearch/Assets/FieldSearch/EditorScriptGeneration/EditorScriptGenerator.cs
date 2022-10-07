@@ -32,7 +32,9 @@ namespace FieldSearch.EditorScriptGeneration
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            AssetDatabase.ForceReserializeAssets();
+            AssetDatabase.ForceReserializeAssets(
+                assetPaths: new[] { _settings.DefaultFileFolder },
+                options: ForceReserializeAssetsOptions.ReserializeAssets);
         }
     }
 }
