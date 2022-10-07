@@ -1,6 +1,8 @@
 {
     "name": "CodeGenerator",
-    "references": [],
+    "references": [
+        "FieldSearch.Attributes"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"

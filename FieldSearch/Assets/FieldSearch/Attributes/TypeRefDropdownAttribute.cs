@@ -9,10 +9,6 @@ namespace FieldSearch.Attributes
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class TypeRefDropdownAttribute : PropertyAttribute
     {
-        public Type BaseType { get; private set; }
-        public string[] InheritedTypeNameArray { get; private set; }
-        public string[] ShortInheritedTypeNameArray { get; private set; }
-
         public TypeRefDropdownAttribute(Type baseType)
         {
             BaseType = baseType;
@@ -21,6 +17,10 @@ namespace FieldSearch.Attributes
             InheritedTypeNameArray = types.Select(x => x.AssemblyQualifiedName).ToArray();
             ShortInheritedTypeNameArray = types.Select(x => x.Name).ToArray();
         }
+
+        public Type BaseType { get; private set; }
+        public string[] InheritedTypeNameArray { get; private set; }
+        public string[] ShortInheritedTypeNameArray { get; private set; }
 
         public static List<Type> GetInheritedTypes(Type baseType, params Assembly[] assemblies)
         {

@@ -1,5 +1,4 @@
-﻿using CodeGeneration.Data;
-using System;
+﻿using System;
 using System.IO;
 using UnityEngine;
 
@@ -7,6 +6,9 @@ namespace CodeGeneration.Base
 {
     public abstract class BaseCodeGeneratorSettings<T> : ScriptableObject where T : BaseScriptTemplate
     {
+        protected abstract string CodeGeneratorTypeName { get; }
+
+        protected Type CodeGeneratorType => Type.GetType(CodeGeneratorTypeName);
         public string DefaultFileFolder =>
             Path.Combine(Environment.CurrentDirectory, _defaultFileFolder);
 
@@ -18,5 +20,11 @@ namespace CodeGeneration.Base
 
         public string FullFileFolder(string relativePath) =>
             Path.Combine(Environment.CurrentDirectory, relativePath);
+
+        public BaseCodeGenerator<T> CreateNewGeneratorInstance()
+        {
+            return (BaseCodeGenerator<T>)Activator
+                .CreateInstance(CodeGeneratorType, args: this);
+        }
     }
 }

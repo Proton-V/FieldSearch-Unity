@@ -1,16 +1,18 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using UnityEditor;
 using UnityEngine;
 
 namespace CodeGeneration.Base
 {
     public abstract class BaseCodeGenerator<T> where T : BaseScriptTemplate
     {
+        protected BaseCodeGenerator(BaseCodeGeneratorSettings<T> settings)
+        {
+            _settings = settings;
+        }
+
         [SerializeField]
-        private BaseCodeGeneratorSettings<T> _settings;
+        protected BaseCodeGeneratorSettings<T> _settings;
 
         public abstract void CreateScripts(T scriptTemplate, params Type[] inputTypes);
     }
