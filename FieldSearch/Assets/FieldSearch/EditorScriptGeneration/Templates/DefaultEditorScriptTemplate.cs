@@ -2,15 +2,14 @@
 using CodeGeneration.Data;
 using System;
 using System.IO;
-using System.Text;
 using UnityEditor;
 using UnityEngine;
 
 namespace FieldSearch.EditorScriptGeneration.Templates
 {
-    [CreateAssetMenu(fileName = "DefaultEditorScriptTemplate", 
+    [CreateAssetMenu(fileName = DEFAULT_OBJECT_NAME, 
         menuName = "ScriptableObjects/FieldSearch/EditorScriptGenerator/Templates/DefaultEditorScriptTemplate")]
-    public class DefaultEditorScriptTemplate : BaseEditorScriptTemplate
+    public partial class DefaultEditorScriptTemplate : BaseEditorScriptTemplate
     {
         public override GeneratedScript CreateScript(Type type, params object[] args)
         {
@@ -60,6 +59,25 @@ namespace FieldSearch.EditorScriptGeneration.Templates
             }
 
             return null;
+        }
+
+        public static DefaultEditorScriptTemplate CreateTemplateObject()
+        {
+            var template = CreateInstance<DefaultEditorScriptTemplate>();
+
+            if (!Directory.Exists(DIRECTORY_PATH))
+            {
+                Directory.CreateDirectory(DIRECTORY_PATH);
+            }
+
+            template._scriptNameFormatString = DEFAULT_SCRIPT_NAME_FORMAT;
+            template._scriptFormatString = DEFAULT_SCRIPT_FORMAT;
+
+            string path = $"{DIRECTORY_PATH}/{DEFAULT_OBJECT_NAME}.asset";
+            AssetDatabase.CreateAsset(template, path);
+            AssetDatabase.SaveAssets();
+
+            return template;
         }
     }
 }

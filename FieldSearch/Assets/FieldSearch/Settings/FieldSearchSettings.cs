@@ -42,6 +42,7 @@ namespace FieldSearch.Settings
             }
 
             settings.searchLayerTypeName = typeof(DefaultSearchLayerInspector).AssemblyQualifiedName;
+            settings._editorScriptGeneratorSettings = EditorScriptGeneratorSettings.CreateSettingsObject();
 
             string path = $"{directoryPath}/FieldSearch Settings.asset";
             AssetDatabase.CreateAsset(settings, path);
