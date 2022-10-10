@@ -2,6 +2,7 @@
 using CodeGeneration.Base;
 using FieldSearch.EditorScriptGeneration.Templates;
 using System;
+using System.IO;
 using UnityEditor;
 
 namespace FieldSearch.EditorScriptGeneration
@@ -11,7 +12,7 @@ namespace FieldSearch.EditorScriptGeneration
         public EditorScriptGenerator(BaseCodeGeneratorSettings<BaseEditorScriptTemplate> settings)
             : base(settings) { }
 
-        public override void CreateScripts(BaseEditorScriptTemplate scriptTemplate = null, params Type[] inputTypes)
+        public override void CreateScripts(BaseEditorScriptTemplate scriptTemplate = null, bool refresh = true, params Type[] inputTypes)
         {
             if (scriptTemplate == null)
             {
@@ -30,11 +31,31 @@ namespace FieldSearch.EditorScriptGeneration
                 CodeGenerationUtils.SaveToFile(_settings.DefaultFileFolder, script);
             }
 
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-            AssetDatabase.ForceReserializeAssets(
-                assetPaths: new[] { _settings.DefaultFileFolder },
-                options: ForceReserializeAssetsOptions.ReserializeAssets);
+            if (refresh)
+            {
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+                AssetDatabase.ForceReserializeAssets(
+                    assetPaths: new[] { _settings.DefaultFileFolder },
+                    options: ForceReserializeAssetsOptions.ReserializeAssets);
+            }
+        }
+
+        public bool TryCreateAllEditors()
+        {
+            try
+            {
+                var inputClasses = CodeGenerationUtils.GetAllAvailableEditorTypes();
+
+                CreateScripts(refresh: true, inputTypes: inputClasses);
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogError(e);
+                return false;
+            }
         }
     }
 }

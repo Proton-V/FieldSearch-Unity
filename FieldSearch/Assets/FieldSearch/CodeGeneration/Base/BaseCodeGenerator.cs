@@ -14,7 +14,7 @@ namespace CodeGeneration.Base
         [SerializeField]
         protected BaseCodeGeneratorSettings<T> _settings;
 
-        public abstract void CreateScripts(T scriptTemplate, params Type[] inputTypes);
+        public abstract void CreateScripts(T scriptTemplate, bool refresh = true, params Type[] inputTypes);
     }
 
 }

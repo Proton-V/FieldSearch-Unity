@@ -9,6 +9,37 @@ namespace CodeGeneration
 {
     public class CodeGenerationUtils
     {
+        public static Type[] GetAllAvailableEditorTypes()
+        {
+            var types = GetAllInheritedTypes(typeof(UnityEditor.Editor),
+                ValidateNamespaceFunc: (name) =>
+                {
+                    if (name == null)
+                    {
+                        return false;
+                    }
+
+                        // Dev debug lines
+                        if (new DirectoryInfo(Environment.CurrentDirectory).Name == nameof(FieldSearch)
+                            && name.StartsWith("FieldSearch.Samples"))
+                    {
+                        return true;
+                    }
+
+                    // Default exclude namespaces
+                    if (name.Contains(nameof(UnityEditor))
+                    || name.Contains(nameof(UnityEngine))
+                    || name.Contains(nameof(FieldSearch))
+                    || name.Contains("TMP"))
+                    {
+                        return false;
+                    }
+
+                    return true;
+                });
+            return types;
+        }
+
         public static Type[] GetAllInheritedTypes(Type baseType, Assembly[] assemblies = default, 
             Func<string, bool> ValidateNamespaceFunc = default)
         {
