@@ -40,6 +40,7 @@ namespace FieldSearch.EditorScriptGeneration
 
             settings._defaultFileFolder = DEFAULT_GENERATED_FILE_FOLDER;
             settings._defaultScriptTemplate = DefaultEditorScriptTemplate.CreateTemplateObject();
+            settings._codeGeneratorTypeName = typeof(EditorScriptGenerator).AssemblyQualifiedName;
 
             string path = $"{DIRECTORY_PATH}/{DEFAULT_OBJECT_NAME}.asset";
             AssetDatabase.CreateAsset(settings, path);

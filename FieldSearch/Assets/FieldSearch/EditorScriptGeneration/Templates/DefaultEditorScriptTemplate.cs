@@ -1,5 +1,6 @@
 ﻿using CodeGeneration;
 using CodeGeneration.Data;
+using FieldSearch.Core.GlobalEditor;
 using System;
 using System.IO;
 using UnityEditor;
@@ -72,6 +73,7 @@ namespace FieldSearch.EditorScriptGeneration.Templates
 
             template._scriptNameFormatString = DEFAULT_SCRIPT_NAME_FORMAT;
             template._scriptFormatString = DEFAULT_SCRIPT_FORMAT;
+            template._defaultBaseEditorTypeName = typeof(DefaultFieldSearchGlobalEditor).AssemblyQualifiedName;
 
             string path = $"{DIRECTORY_PATH}/{DEFAULT_OBJECT_NAME}.asset";
             AssetDatabase.CreateAsset(template, path);
