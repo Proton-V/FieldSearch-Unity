@@ -66,6 +66,14 @@ namespace CodeGeneration
             return types.ToArray();
         }
 
+        public static FieldInfo GetAttributeFieldByName(Attribute attribute, string fieldName)
+        {
+            var field = attribute.GetType()
+                .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
+                ?.FirstOrDefault(x => x.Name == fieldName);
+            return field;
+        }
+
         public static FieldInfo GetFirstAttributeFieldByType<T>(Attribute attribute) where T : Type
         {
             var field = attribute.GetType()
