@@ -19,6 +19,7 @@ namespace FieldSearch.EditorScriptGeneration.Editor
         {
             EditorScriptGeneratorWindow window = (EditorScriptGeneratorWindow)
                 GetWindow(typeof(EditorScriptGeneratorWindow));
+
             window.editorScriptGenerator = editorScriptGeneratorSettings.GeneratorInstance;
 
             var size = new Vector2(WIDTH, HEIGHT);
@@ -52,6 +53,12 @@ namespace FieldSearch.EditorScriptGeneration.Editor
 
         void OnGUI()
         {
+            if(editorScriptGenerator == null)
+            {
+                Close();
+                return;
+            }
+
             ShowScrollViewLayout();
             ShowButtonsLayout();
         }
