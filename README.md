@@ -1,6 +1,6 @@
-# FieldSearch-Unity V1.0.1
+# FieldSearch-Unity V1.0.2
  
- ![image](https://user-images.githubusercontent.com/65833201/188505738-bd94910c-7cef-46c2-bad5-632436056de6.png)
+ ![image](https://user-images.githubusercontent.com/65833201/194973078-7e30de6f-072f-4861-a444-0338d207aa48.png)
  
 - Add to project without git handler
 - Ability to set SearchableEditor for all MonoBehaviour
@@ -27,20 +27,20 @@ If you want example of using SearchableEditor for specific MonoBehaviour please 
 
 ***Skip this if you installed this as package && you don't want to add a "FieldSearchDemo" folder***
 
-Download && Import [latest asset package V1.0.1](https://github.com/Proton-V/FieldSearch-Unity/releases/download/V1.0.1/FieldSearch-UnityV1.0.1.unitypackage)
+Download && Import [latest asset package V1.0.2](https://github.com/Proton-V/FieldSearch-Unity/releases/download/V1.0.2/FieldSearch-UnityV1.0.2.unitypackage)
 
 **"FieldSearchDemo" folder (optional) contains example of using SearchableEditor for specific MonoBehaviour**
 - [ ] Uncheck "FieldSearchDemo" folder **if you don't need it**.
 - [ ] Uncheck "FieldSearch" folder **if you have this as pacakge**.
 
-![image](https://user-images.githubusercontent.com/65833201/188316669-6702911b-3fbb-4670-8ae4-c4234a7d4cd5.png)
+![image](https://user-images.githubusercontent.com/65833201/194972948-a2bdd961-ae6d-4c6f-a77b-4c4507e9f00c.png)
 
 ## Step 3
 
 Create instance of default settings
 **Field Search -> Add default settings ...**
 
-![image](https://user-images.githubusercontent.com/65833201/188503443-b4f4a59a-9d86-495f-b24c-63015428a75b.png)
+![image](https://user-images.githubusercontent.com/65833201/194972261-a7422752-be08-4f3b-a300-5022a309a4fb.png)
 
 ## Step 4 (Optional)
 
@@ -62,9 +62,19 @@ After press:
 **Field Search -> Remove package folders from .gitignore (global)**
 
 # Settings
-![image](https://user-images.githubusercontent.com/65833201/188504195-966a86db-de92-498c-955a-1b513e7e212c.png)
+![image](https://user-images.githubusercontent.com/65833201/194972690-b6738e15-76b8-4859-965a-0f84df587674.png)
 1. Apply SearchableEditor to all MonoBehaviour (who don't use custom inspector)
-2. You can create && set custom SearchableEditorConfigObject to change default view of SearchableEditor
+2. You can create && set custom SearchableLayerInspector to change default view of SearchableEditor
 3. Save cache to disk to use previous cache between sessions
 4. Memory limit in MB - memory and disk cache limit
-5. Clear cache buttons
+5. Ref to EditorScriptGeneratorSettings
+6. Clear cache buttons
+7. Open EditorScriptGenerator window button
+
+> ## EditorScriptGenerator Window
+>
+> You can try to override current active editors
+>
+> ![image](https://user-images.githubusercontent.com/65833201/194973264-a3edc661-75f5-4d15-aca5-3fc7446ff483.png)
+>
+> * You can create your own Generation Template && Generator
