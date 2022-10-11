@@ -1,21 +1,41 @@
-﻿using static FieldSearch.Core.Base.BaseSearch;
+﻿using FieldSearch.Helpers.StringFormatter;
+using System;
+using static FieldSearch.Core.Base.BaseSearch;
 
 namespace FieldSearch.Core.Data.Criteria.Base
 {
 	public abstract class BaseSearchCriterion
 	{
-		public BaseSearchCriterion(ref SearchFilter searchFilter)
+		public BaseSearchCriterion()
 		{
-			Init(ref searchFilter);
+			Init();
 		}
 
-		protected SearchFilter searchFilter;
+		protected SearchFilter criterionFilter;
 
-		protected virtual void Init(ref SearchFilter searchFilter)
+		public abstract bool HasResult<T>(SearchFilter currentFlags, params T[] input);
+
+		protected abstract SearchFilter GetCriterionSearchFilter();
+
+		protected bool Compare(string name, string rawSearchText, SearchFilter currentSearchFilter)
         {
-			this.searchFilter = searchFilter;
+			var finalString = SearchStringFormatter.GetFinalString(name, currentSearchFilter);
+			var finalSearchText = SearchStringFormatter.GetFinalString(rawSearchText, currentSearchFilter);
+
+			var startWith = criterionFilter.HasFlag(SearchFilter.StartWith);
+			return startWith ?
+			finalString.StartsWith(finalSearchText)
+			: finalString.Contains(finalSearchText);
 		}
 
-		public abstract bool HasResult<T>(params T[] input);
+		protected virtual bool IsActive(SearchFilter currentFlags)
+        {
+			return currentFlags.HasFlag(criterionFilter);
+		}
+
+		protected virtual void Init()
+        {
+			this.criterionFilter = GetCriterionSearchFilter();
+		}
 	}
 }

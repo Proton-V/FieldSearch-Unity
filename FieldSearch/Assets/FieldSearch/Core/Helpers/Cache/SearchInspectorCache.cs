@@ -1,7 +1,6 @@
 ﻿using FieldSearch.Helpers.Cache.Data;
-using FieldSearch.Settings;
+using FieldSearch.Settings.Base;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -41,7 +40,7 @@ namespace FieldSearch.Helpers.Cache
 		protected static ConcurrentDictionary<int, SearchCacheObj> inspectorsDict
 			= new ConcurrentDictionary<int, SearchCacheObj>();
 
-		protected static FieldSearchSettings Settings => FieldSearchSettings.Instance;
+		protected static BaseFieldSearchSettings Settings => BaseFieldSearchSettings.Instance;
 
 		public static bool TryAddValue(SearchCacheObj val)
 		{

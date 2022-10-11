@@ -1,5 +1,4 @@
 ﻿using FieldSearch.Core.Data.Criteria.Base;
-using FieldSearch.Helpers.StringFormatter;
 using UnityEditor;
 using static FieldSearch.Core.Base.BaseSearch;
 
@@ -7,21 +6,25 @@ namespace FieldSearch.Core.Data.Criteria
 {
 	public class ByFieldNameSearchCriterion : BaseSearchCriterion
 	{
-		public ByFieldNameSearchCriterion(ref SearchFilter searchFilter)
-			: base(ref searchFilter) { }
+		public const SearchFilter CRITERION_SEARCH_FILTER = SearchFilter.ByFieldName;
 
-		protected bool StartWith => searchFilter.HasFlag(SearchFilter.StartWith);
-		protected bool ByFieldName => searchFilter.HasFlag(SearchFilter.ByFieldName);
+		public ByFieldNameSearchCriterion() : base() { }
 
-		public override bool HasResult<T>(params T[] input)
+		protected override SearchFilter GetCriterionSearchFilter() => CRITERION_SEARCH_FILTER;
+
+		public override bool HasResult<T>(SearchFilter currentFlags, params T[] input)
 		{
+			if (!IsActive(currentFlags))
+			{
+				return false;
+			}
+
 			var rawSearchText = input[0] as string;
 			if(rawSearchText is null)
             {
 				return false;
             }
 
-			var finalSearchText = SearchStringFormatter.GetFinalString(rawSearchText, searchFilter);
 			var serializedProperty = input[1] as SerializedProperty;
 
 			if (serializedProperty == null)
@@ -29,16 +32,7 @@ namespace FieldSearch.Core.Data.Criteria
 				return false;
 			}
 
-			if (ByFieldName)
-			{
-				return StartWith ?
-				SearchStringFormatter.GetFinalString(serializedProperty.displayName, searchFilter)
-				.StartsWith(finalSearchText)
-				: SearchStringFormatter.GetFinalString(serializedProperty.name, searchFilter)
-				.Contains(finalSearchText);
-			}
-
-			return false;
+			return Compare(serializedProperty.displayName, rawSearchText, currentFlags);
 		}
 	}
 }
