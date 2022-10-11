@@ -2,12 +2,12 @@
  
  ![image](https://user-images.githubusercontent.com/65833201/194973078-7e30de6f-072f-4861-a444-0338d207aa48.png)
  
-- Add to project without git handler
 - Ability to set SearchableEditor for all MonoBehaviour
 - Add to project without git handler
 - Save your requests between sessions with caching logic
 - Default Search with criteria (ObjName, FieldName) && options (StartWith, IgnoreCase)
 - Create your own search logic if necessary
+- Override current CustomEditors with EditorScriptGeneratorWindow
 
 ### Tested on:
  - Unity Editor: 2018.4.3f1 | 2020.3.35f1
