@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace FieldSearch.Core.Attributes.Drawers
+namespace FieldSearch.Attributes.Drawers
 {
     [CustomPropertyDrawer(typeof(TypeRefDropdownAttribute))]
     public class TypeRefDropdownAttributeDrawer : PropertyDrawer
@@ -33,6 +33,8 @@ namespace FieldSearch.Core.Attributes.Drawers
             if (EditorGUI.EndChangeCheck())
             {
                 property.stringValue = target.InheritedTypeNameArray[currentTypeIndex];
+                property.serializedObject.ApplyModifiedProperties();
+                property.serializedObject.Update();
             }
         }
 

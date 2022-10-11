@@ -1,11 +1,12 @@
 ﻿using FieldSearch.Helpers.Cache;
+using FieldSearch.Settings.Base;
 using UnityEditor;
 using UnityEngine;
 
 namespace FieldSearch.Settings.Editor
 {
-    [CustomEditor(typeof(FieldSearchSettings))]
-    public class FieldSearchSettingsEditor : UnityEditor.Editor
+    [CustomEditor(typeof(BaseFieldSearchSettings), true)]
+    public class DefaultFieldSearchSettingsEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {

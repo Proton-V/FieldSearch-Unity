@@ -3,7 +3,7 @@
 namespace FieldSearch.Samples
 {
     /// <summary>
-    /// Base class for <see cref="SampleDefaultMonoBehaviour"/>
+    /// Base class for <see cref="SampleSearchableMonoBehaviour"/>
     /// </summary>
     public class BaseSampleSearchableMonoBehaviour : MonoBehaviour
     {

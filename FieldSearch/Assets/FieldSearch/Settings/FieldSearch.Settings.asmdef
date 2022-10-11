@@ -1,7 +1,9 @@
 {
-    "name": "FieldSearch.Core",
+    "name": "FieldSearch.Settings",
     "references": [
-        "FieldSearch.Attributes"
+        "FieldSearch.Core",
+        "FieldSearch.EditorScriptGeneration",
+        "CodeGenerator"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

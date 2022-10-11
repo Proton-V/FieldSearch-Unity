@@ -1,5 +1,5 @@
 {
-    "name": "FieldSearch.Core",
+    "name": "CodeGenerator",
     "references": [
         "FieldSearch.Attributes"
     ],

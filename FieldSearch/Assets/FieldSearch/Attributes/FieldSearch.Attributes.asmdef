@@ -1,8 +1,6 @@
 {
-    "name": "FieldSearch.Core",
-    "references": [
-        "FieldSearch.Attributes"
-    ],
+    "name": "FieldSearch.Attributes",
+    "references": [],
     "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
