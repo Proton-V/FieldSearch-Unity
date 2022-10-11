@@ -11,7 +11,7 @@
 {0}
 {1}
 {2}
-[CustomEditor(typeof({3}))]
+[CustomEditor({3})]
 public class {4} : {5}<{6}>
 {{
 

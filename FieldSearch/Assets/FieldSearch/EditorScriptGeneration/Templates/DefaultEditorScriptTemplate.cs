@@ -21,8 +21,14 @@ namespace FieldSearch.EditorScriptGeneration.Templates
                 {
                     return null;
                 }
-                var field = CodeGenerationUtils.GetFirstAttributeFieldByType<Type>(attribute);
-                var editorTargetType = field.GetValue(attribute) as Type;
+                var targetTypeField = CodeGenerationUtils.GetFirstAttributeFieldByType<Type>(attribute);
+                var editorTargetType = targetTypeField.GetValue(attribute) as Type;
+
+                var editorForChildClassesField = CodeGenerationUtils.GetAttributeFieldByName(attribute, "m_EditorForChildClasses");
+                var isEditorForChildClasses = (bool)editorForChildClassesField.GetValue(attribute);
+                var isEditorForChildClassesLine = isEditorForChildClasses ? ", true" : "";
+
+                var customEditorAttributeLine = $"typeof({editorTargetType.Name}){isEditorForChildClassesLine}";
 
                 if (editorTargetType != null)
                 {
@@ -43,7 +49,7 @@ namespace FieldSearch.EditorScriptGeneration.Templates
                         newEditorTypeNamespaceLine,
                         targetTypeNamespaceLine,
                         editorTypeNamespaceLine,
-                        editorTargetType.Name,
+                        customEditorAttributeLine,
                         newScriptName,
                         newEditor.Name,
                         type.Name,
