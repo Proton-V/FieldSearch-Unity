@@ -11,7 +11,8 @@ namespace FieldSearch.EditorScriptGeneration.Templates
         protected Type DefaultBaseEditorType => Type.GetType(_defaultBaseEditorTypeName);
 
         [SerializeField]
-        [TypeRefDropdown(typeof(BaseFieldSearchGlobalEditor))]
+        [TypeRefDropdown(typeof(BaseFieldSearchGlobalEditor),
+            ignoredNamespaces: new string[] { null })] // null to ignore generated classes w/o namespace
         protected string _defaultBaseEditorTypeName;
     }
 }

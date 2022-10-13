@@ -41,7 +41,7 @@ namespace FieldSearch.Attributes.Drawers
         private void Init(SerializedProperty property)
         {
             target = attribute as TypeRefDropdownAttribute;
-            currentTypeIndex = Array.IndexOf(target.ShortInheritedTypeNameArray, property.stringValue);
+            currentTypeIndex = Array.IndexOf(target.InheritedTypeNameArray, property.stringValue);
 
             if (currentTypeIndex < 0)
             {
