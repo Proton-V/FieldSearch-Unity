@@ -2,7 +2,6 @@
 using CodeGeneration.Base;
 using FieldSearch.EditorScriptGeneration.Templates;
 using System;
-using System.IO;
 using UnityEditor;
 
 namespace FieldSearch.EditorScriptGeneration
