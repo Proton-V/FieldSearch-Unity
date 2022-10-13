@@ -13,7 +13,7 @@ namespace FieldSearch.Core.Inspectors
 	public class DefaultSearchLayerInspector : BaseSearchLayerInspector
 	{
 		protected Func<Object, int> Id => (target) => target.GetInstanceID();
-		private SearchInspectorService searchInspectorService;
+		protected SearchInspectorService searchInspectorService;
 
 		protected virtual void OnEnable()
 		{
