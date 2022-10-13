@@ -3,7 +3,8 @@
     "references": [
         "CodeGenerator",
         "FieldSearch.Attributes",
-        "FieldSearch.Core.GlobalEditor"
+        "FieldSearch.Core.GlobalEditor",
+        "FieldSearch.Core"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [
