@@ -9,12 +9,14 @@ namespace FieldSearch.Attributes
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class TypeRefDropdownAttribute : PropertyAttribute
     {
-        public TypeRefDropdownAttribute(Type baseType)
+        public TypeRefDropdownAttribute(Type baseType, params string[] ignoredNamespaces)
         {
             BaseType = baseType;
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             var types = GetInheritedTypes(BaseType, assemblies)
-                .Where(x => !x.IsAbstract);
+                .Where(x => !x.IsAbstract
+                && !ignoredNamespaces.Contains(x.Namespace));
+
             InheritedTypeNameArray = types.Select(x => x.AssemblyQualifiedName).ToArray();
             ShortInheritedTypeNameArray = types.Select(x => x.Name).ToArray();
         }

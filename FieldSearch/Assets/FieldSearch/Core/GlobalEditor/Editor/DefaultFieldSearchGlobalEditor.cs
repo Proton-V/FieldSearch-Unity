@@ -9,12 +9,11 @@ namespace FieldSearch.Core.GlobalEditor
     [CustomEditor(typeof(MonoBehaviour), true, isFallback = true)]
     public class DefaultFieldSearchGlobalEditor : BaseFieldSearchGlobalEditor
     {
-        BaseFieldSearchSettings Settings => BaseFieldSearchSettings.Instance;
-        Type SearchLayerInspectorType => Settings.SearchLayerInspectorType;
+        protected virtual BaseFieldSearchSettings Settings => BaseFieldSearchSettings.Instance;
+        protected virtual Type SearchLayerInspectorType => Settings.SearchLayerInspectorType;
+        protected virtual bool IsActive => Settings?.ApplyToAll ?? false;
 
-        Editor searchLayerInspector;
-
-        bool IsActive => Settings?.ApplyToAll ?? false;
+        protected Editor searchLayerInspector;
 
         private void OnEnable()
         {
@@ -51,8 +50,8 @@ namespace FieldSearch.Core.GlobalEditor
     /// <typeparam name="T">Default inspector</typeparam>
     public abstract class DefaultFieldSearchGlobalEditor<T> : BaseFieldSearchGlobalEditor where T : Editor
     {
-        Editor searchableGlobalEditor;
-        Editor defaultEditor;
+        protected Editor searchableGlobalEditor;
+        protected Editor defaultEditor;
 
         private void OnEnable()
         {
@@ -65,7 +64,7 @@ namespace FieldSearch.Core.GlobalEditor
             InitSearchableInspector();
         }
 
-        private void InitSearchableInspector()
+        protected virtual void InitSearchableInspector()
         {
             searchableGlobalEditor = CreateEditor(target, typeof(DefaultFieldSearchGlobalEditor));
             defaultEditor = CreateEditor(target, typeof(T));
