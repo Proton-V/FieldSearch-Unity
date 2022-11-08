@@ -1,0 +1,173 @@
+\hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache}{}\doxysection{Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache Class Reference}
+\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache}\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+
+
+Search\+Cache inspector controller. With Initialize\+On\+Load logic   
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a5501bbc63cde38590bacaa09d2ee6461}{Get\+Current\+Size}} ()
+\item 
+static bool \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a300987d9493e4eb417af52edcaaf2fd7}{Try\+Add\+Value}} (\mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}} val)
+\item 
+static bool \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a17825c38f0f5c17896ca6f0f989f643c}{Try\+Remove\+Value}} (int id)
+\item 
+static bool \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_aeaeb6fccaf0a67f313248d5ef88ef8ae}{Try\+Get\+Value}} (int id, out \mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}} obj)
+\item 
+static void \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a082045ffa57cd58370b10d2f0fac268c}{Clear\+Cache}} (bool from\+Disk=true, bool from\+Memory=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a12c5654132e2023e82dbbafa3f7ea98f}{FILE\+\_\+\+NAME}} = \char`\"{}Search\+Inspector\+Cache.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Concurrent\+Dictionary$<$ int, \mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}} $>$ \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_af8445ffed001d6ddae15abdea240d291}{inspectors\+Dict}} = new Concurrent\+Dictionary$<$int, \mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a26b321016c7d14d6d61b7d93fbffa9a6}{File\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static \mbox{\hyperlink{class_field_search_1_1_settings_1_1_base_1_1_base_field_search_settings}{Base\+Field\+Search\+Settings}} \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a6ec429aad2380233aaab488746b50d0e}{Settings}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_af11e2572805b46fa24d9dae16a0d5bce}{Search\+Inspector\+Cache}} ()
+\item 
+static void \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a1f75aa21f7c8810533332d8ffaf69aa4}{Editor\+Application\+\_\+quitting}} ()
+\item 
+static void \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a143568f700f1bb4ce397601dcfb2591c}{Assembly\+Reload\+Events\+\_\+before\+Assembly\+Reload}} ()
+\item 
+static bool \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_ab6599822459c13ccedd57d113b034197}{Try\+Remove\+First\+Value}} ()
+\item 
+static bool \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a6c443fbd86952c163b1a23c2573b362f}{Has\+Free\+Memory\+Slots}} ()
+\item 
+static double \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_affb4f899f5ca2ef412d870337540470a}{Convert\+Byte\+To\+Mb}} (float byte\+Count)
+\item 
+static void \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_afe11b200416c53980556602d52d26eb9}{Save\+Cache\+To\+Disk}} ()
+\item 
+static void \mbox{\hyperlink{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_ad035fd5128efc0f98ab4b4b9c8df01e6}{Read\+Cache\+From\+Disk}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Search\+Cache inspector controller. With Initialize\+On\+Load logic  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_af11e2572805b46fa24d9dae16a0d5bce}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_af11e2572805b46fa24d9dae16a0d5bce}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!SearchInspectorCache@{SearchInspectorCache}}
+\index{SearchInspectorCache@{SearchInspectorCache}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{SearchInspectorCache()}{SearchInspectorCache()}}
+{\footnotesize\ttfamily static Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Search\+Inspector\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a143568f700f1bb4ce397601dcfb2591c}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a143568f700f1bb4ce397601dcfb2591c}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!AssemblyReloadEvents\_beforeAssemblyReload@{AssemblyReloadEvents\_beforeAssemblyReload}}
+\index{AssemblyReloadEvents\_beforeAssemblyReload@{AssemblyReloadEvents\_beforeAssemblyReload}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{AssemblyReloadEvents\_beforeAssemblyReload()}{AssemblyReloadEvents\_beforeAssemblyReload()}}
+{\footnotesize\ttfamily static void Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Assembly\+Reload\+Events\+\_\+before\+Assembly\+Reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a082045ffa57cd58370b10d2f0fac268c}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a082045ffa57cd58370b10d2f0fac268c}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!ClearCache@{ClearCache}}
+\index{ClearCache@{ClearCache}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{ClearCache()}{ClearCache()}}
+{\footnotesize\ttfamily static void Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Clear\+Cache (\begin{DoxyParamCaption}\item[{bool}]{from\+Disk = {\ttfamily true},  }\item[{bool}]{from\+Memory = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_affb4f899f5ca2ef412d870337540470a}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_affb4f899f5ca2ef412d870337540470a}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!ConvertByteToMb@{ConvertByteToMb}}
+\index{ConvertByteToMb@{ConvertByteToMb}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{ConvertByteToMb()}{ConvertByteToMb()}}
+{\footnotesize\ttfamily static double Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Convert\+Byte\+To\+Mb (\begin{DoxyParamCaption}\item[{float}]{byte\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a1f75aa21f7c8810533332d8ffaf69aa4}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a1f75aa21f7c8810533332d8ffaf69aa4}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!EditorApplication\_quitting@{EditorApplication\_quitting}}
+\index{EditorApplication\_quitting@{EditorApplication\_quitting}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{EditorApplication\_quitting()}{EditorApplication\_quitting()}}
+{\footnotesize\ttfamily static void Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Editor\+Application\+\_\+quitting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a5501bbc63cde38590bacaa09d2ee6461}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a5501bbc63cde38590bacaa09d2ee6461}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!GetCurrentSize@{GetCurrentSize}}
+\index{GetCurrentSize@{GetCurrentSize}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{GetCurrentSize()}{GetCurrentSize()}}
+{\footnotesize\ttfamily static float Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Get\+Current\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a6c443fbd86952c163b1a23c2573b362f}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a6c443fbd86952c163b1a23c2573b362f}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!HasFreeMemorySlots@{HasFreeMemorySlots}}
+\index{HasFreeMemorySlots@{HasFreeMemorySlots}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{HasFreeMemorySlots()}{HasFreeMemorySlots()}}
+{\footnotesize\ttfamily static bool Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Has\+Free\+Memory\+Slots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_ad035fd5128efc0f98ab4b4b9c8df01e6}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_ad035fd5128efc0f98ab4b4b9c8df01e6}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!ReadCacheFromDisk@{ReadCacheFromDisk}}
+\index{ReadCacheFromDisk@{ReadCacheFromDisk}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{ReadCacheFromDisk()}{ReadCacheFromDisk()}}
+{\footnotesize\ttfamily static void Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Read\+Cache\+From\+Disk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_afe11b200416c53980556602d52d26eb9}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_afe11b200416c53980556602d52d26eb9}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!SaveCacheToDisk@{SaveCacheToDisk}}
+\index{SaveCacheToDisk@{SaveCacheToDisk}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{SaveCacheToDisk()}{SaveCacheToDisk()}}
+{\footnotesize\ttfamily static void Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Save\+Cache\+To\+Disk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a300987d9493e4eb417af52edcaaf2fd7}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a300987d9493e4eb417af52edcaaf2fd7}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!TryAddValue@{TryAddValue}}
+\index{TryAddValue@{TryAddValue}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{TryAddValue()}{TryAddValue()}}
+{\footnotesize\ttfamily static bool Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Try\+Add\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_aeaeb6fccaf0a67f313248d5ef88ef8ae}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_aeaeb6fccaf0a67f313248d5ef88ef8ae}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!TryGetValue@{TryGetValue}}
+\index{TryGetValue@{TryGetValue}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{TryGetValue()}{TryGetValue()}}
+{\footnotesize\ttfamily static bool Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Try\+Get\+Value (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{out \mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}}}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_ab6599822459c13ccedd57d113b034197}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_ab6599822459c13ccedd57d113b034197}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!TryRemoveFirstValue@{TryRemoveFirstValue}}
+\index{TryRemoveFirstValue@{TryRemoveFirstValue}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{TryRemoveFirstValue()}{TryRemoveFirstValue()}}
+{\footnotesize\ttfamily static bool Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Try\+Remove\+First\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a17825c38f0f5c17896ca6f0f989f643c}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a17825c38f0f5c17896ca6f0f989f643c}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!TryRemoveValue@{TryRemoveValue}}
+\index{TryRemoveValue@{TryRemoveValue}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{TryRemoveValue()}{TryRemoveValue()}}
+{\footnotesize\ttfamily static bool Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Try\+Remove\+Value (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a12c5654132e2023e82dbbafa3f7ea98f}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a12c5654132e2023e82dbbafa3f7ea98f}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!FILE\_NAME@{FILE\_NAME}}
+\index{FILE\_NAME@{FILE\_NAME}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{FILE\_NAME}{FILE\_NAME}}
+{\footnotesize\ttfamily const string Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+FILE\+\_\+\+NAME = \char`\"{}Search\+Inspector\+Cache.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_af8445ffed001d6ddae15abdea240d291}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_af8445ffed001d6ddae15abdea240d291}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!inspectorsDict@{inspectorsDict}}
+\index{inspectorsDict@{inspectorsDict}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{inspectorsDict}{inspectorsDict}}
+{\footnotesize\ttfamily Concurrent\+Dictionary$<$int, \mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}}$>$ Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+inspectors\+Dict = new Concurrent\+Dictionary$<$int, \mbox{\hyperlink{struct_field_search_1_1_helpers_1_1_cache_1_1_data_1_1_search_cache_obj}{Search\+Cache\+Obj}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a26b321016c7d14d6d61b7d93fbffa9a6}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a26b321016c7d14d6d61b7d93fbffa9a6}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!FilePath@{FilePath}}
+\index{FilePath@{FilePath}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{FilePath}{FilePath}}
+{\footnotesize\ttfamily string Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+File\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a6ec429aad2380233aaab488746b50d0e}\label{class_field_search_1_1_helpers_1_1_cache_1_1_search_inspector_cache_a6ec429aad2380233aaab488746b50d0e}} 
+\index{FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}!Settings@{Settings}}
+\index{Settings@{Settings}!FieldSearch.Helpers.Cache.SearchInspectorCache@{FieldSearch.Helpers.Cache.SearchInspectorCache}}
+\doxysubsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_field_search_1_1_settings_1_1_base_1_1_base_field_search_settings}{Base\+Field\+Search\+Settings}} Field\+Search.\+Helpers.\+Cache.\+Search\+Inspector\+Cache.\+Settings\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [protected]}}
+

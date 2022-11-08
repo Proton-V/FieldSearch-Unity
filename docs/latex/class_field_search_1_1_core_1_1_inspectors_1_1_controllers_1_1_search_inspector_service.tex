@@ -1,0 +1,287 @@
+\hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service}{}\doxysection{Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service Class Reference}
+\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service}\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+
+
+Default Search Service for \mbox{\hyperlink{namespace_field_search_1_1_core_1_1_inspectors}{Inspectors}}. Using \mbox{\hyperlink{class_field_search_1_1_core_1_1_search_with_filters}{Search\+With\+Filters}}   
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a5b4b2d3b93db1f50a88c0dcabae1e6d5}{Search\+Inspector\+Service}} (\mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}{Serialized\+Object}} \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a3acf62ac213d096d820867b4d0e002c4}{serialized\+Object}})
+\item 
+string int flags \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_af3a11f867e9222410633ca604306065c}{Get\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a1db3475bea979e046dad4c734c210209}{Update\+Data}} (string \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab60115c4ef3ade7e158e5346aadfc2aa}{search\+Text}}, Search\+Filter \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6c5cec57fa20bfc3a628911339725126}{search\+Filters}})
+\begin{DoxyCompactList}\small\item\em Update current search data  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a731d7cba9f93095815b4f8036482b217}{Show\+Inspector\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Try show full inspector search layer  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab5bf9f43f692d4f168904b346a00162b}{Show\+Search\+Text\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Try show only search layer  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6252e697f9dd7dcb9ce32e1b65da533d}{Show\+Search\+Objects\+Layer}} ()
+\begin{DoxyCompactList}\small\item\em Try show only search result layer  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Serialized\+Object \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}{Serialized\+Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a16f88e8865909c2fb5e39324c3308d84}{Is\+Null\+Or\+None}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Search status is inactive  \end{DoxyCompactList}\item 
+object \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_acc22b77cdcf9c49f9dacc9a33b03d5fe}{Target\+Object}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current target object  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Serialized\+Property $>$ \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aa9f7a27f542cfa32a388110a654345c7}{Get\+Serialized\+Property\+Recursive}} (Serialized\+Property property, Func$<$ Serialized\+Property, bool $>$ validate\+Func)
+\begin{DoxyCompactList}\small\item\em Get all Serialized\+Property based on {\itshape property}  with inherited objs  \end{DoxyCompactList}\item 
+List$<$ Field\+Info $>$ \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a7bb839fd0fd0246b0032b86daa9576b0}{Get\+Field\+Info\+Recursive}} (Type type)
+\begin{DoxyCompactList}\small\item\em Get all Field\+Info for {\itshape type}  with inherited objs  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a23b3b9865ef8230b2c60f3d5b6494c3f}{Show\+Search\+Fields}} ()
+\begin{DoxyCompactList}\small\item\em Just show search layer  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a102abe4dc487c663629cb447e1587ee9}{Action\+With\+Change\+Check}} (Action action)
+\begin{DoxyCompactList}\small\item\em Method to call GUI action that returns state of change  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a31a071d2c37436c7ec1ba7a7c4b4cb16}{End\+Vertical}} ()
+\begin{DoxyCompactList}\small\item\em Default call Editor\+GUILayout.\+End\+Vertical() with extra actions  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_field_search_1_1_core_1_1_search_with_filters}{Search\+With\+Filters}} \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a195e189d1b826ae58ca4b49587e4673a}{search}}
+\item 
+\mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}{Serialized\+Object}} \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a3acf62ac213d096d820867b4d0e002c4}{serialized\+Object}}
+\item 
+readonly string \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a693e753ed746fd0831e82138af950d32}{search\+Label}} = \char`\"{}Field Search\+:\char`\"{}
+\item 
+string \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab60115c4ef3ade7e158e5346aadfc2aa}{search\+Text}}
+\begin{DoxyCompactList}\small\item\em Get current search data with \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab60115c4ef3ade7e158e5346aadfc2aa}{search\+Text}} \& \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6c5cec57fa20bfc3a628911339725126}{search\+Filters}}  \end{DoxyCompactList}\item 
+Search\+Filter \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6c5cec57fa20bfc3a628911339725126}{search\+Filters}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Default Search Service for \mbox{\hyperlink{namespace_field_search_1_1_core_1_1_inspectors}{Inspectors}}. Using \mbox{\hyperlink{class_field_search_1_1_core_1_1_search_with_filters}{Search\+With\+Filters}}  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a5b4b2d3b93db1f50a88c0dcabae1e6d5}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a5b4b2d3b93db1f50a88c0dcabae1e6d5}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!SearchInspectorService@{SearchInspectorService}}
+\index{SearchInspectorService@{SearchInspectorService}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{SearchInspectorService()}{SearchInspectorService()}}
+{\footnotesize\ttfamily Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Search\+Inspector\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}{Serialized\+Object}}}]{serialized\+Object }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a102abe4dc487c663629cb447e1587ee9}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a102abe4dc487c663629cb447e1587ee9}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!ActionWithChangeCheck@{ActionWithChangeCheck}}
+\index{ActionWithChangeCheck@{ActionWithChangeCheck}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{ActionWithChangeCheck()}{ActionWithChangeCheck()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Action\+With\+Change\+Check (\begin{DoxyParamCaption}\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method to call GUI action that returns state of change  
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a31a071d2c37436c7ec1ba7a7c4b4cb16}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a31a071d2c37436c7ec1ba7a7c4b4cb16}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!EndVertical@{EndVertical}}
+\index{EndVertical@{EndVertical}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{EndVertical()}{EndVertical()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+End\+Vertical (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Default call Editor\+GUILayout.\+End\+Vertical() with extra actions  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_af3a11f867e9222410633ca604306065c}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_af3a11f867e9222410633ca604306065c}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!GetData@{GetData}}
+\index{GetData@{GetData}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily string int flags Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a7bb839fd0fd0246b0032b86daa9576b0}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a7bb839fd0fd0246b0032b86daa9576b0}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!GetFieldInfoRecursive@{GetFieldInfoRecursive}}
+\index{GetFieldInfoRecursive@{GetFieldInfoRecursive}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{GetFieldInfoRecursive()}{GetFieldInfoRecursive()}}
+{\footnotesize\ttfamily List$<$ Field\+Info $>$ Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Get\+Field\+Info\+Recursive (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get all Field\+Info for {\itshape type}  with inherited objs  
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & \\
+\hline
+{\em validate\+Func} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aa9f7a27f542cfa32a388110a654345c7}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aa9f7a27f542cfa32a388110a654345c7}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!GetSerializedPropertyRecursive@{GetSerializedPropertyRecursive}}
+\index{GetSerializedPropertyRecursive@{GetSerializedPropertyRecursive}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{GetSerializedPropertyRecursive()}{GetSerializedPropertyRecursive()}}
+{\footnotesize\ttfamily List$<$ Serialized\+Property $>$ Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Get\+Serialized\+Property\+Recursive (\begin{DoxyParamCaption}\item[{Serialized\+Property}]{property,  }\item[{Func$<$ Serialized\+Property, bool $>$}]{validate\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get all Serialized\+Property based on {\itshape property}  with inherited objs  
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & \\
+\hline
+{\em validate\+Func} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a731d7cba9f93095815b4f8036482b217}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a731d7cba9f93095815b4f8036482b217}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!ShowInspectorLayer@{ShowInspectorLayer}}
+\index{ShowInspectorLayer@{ShowInspectorLayer}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{ShowInspectorLayer()}{ShowInspectorLayer()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Show\+Inspector\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Try show full inspector search layer  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a23b3b9865ef8230b2c60f3d5b6494c3f}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a23b3b9865ef8230b2c60f3d5b6494c3f}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!ShowSearchFields@{ShowSearchFields}}
+\index{ShowSearchFields@{ShowSearchFields}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{ShowSearchFields()}{ShowSearchFields()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Show\+Search\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Just show search layer  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6252e697f9dd7dcb9ce32e1b65da533d}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6252e697f9dd7dcb9ce32e1b65da533d}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!ShowSearchObjectsLayer@{ShowSearchObjectsLayer}}
+\index{ShowSearchObjectsLayer@{ShowSearchObjectsLayer}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{ShowSearchObjectsLayer()}{ShowSearchObjectsLayer()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Show\+Search\+Objects\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Try show only search result layer  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab5bf9f43f692d4f168904b346a00162b}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab5bf9f43f692d4f168904b346a00162b}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!ShowSearchTextArea@{ShowSearchTextArea}}
+\index{ShowSearchTextArea@{ShowSearchTextArea}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{ShowSearchTextArea()}{ShowSearchTextArea()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Show\+Search\+Text\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Try show only search layer  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a1db3475bea979e046dad4c734c210209}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a1db3475bea979e046dad4c734c210209}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!UpdateData@{UpdateData}}
+\index{UpdateData@{UpdateData}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{UpdateData()}{UpdateData()}}
+{\footnotesize\ttfamily void Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Update\+Data (\begin{DoxyParamCaption}\item[{string}]{search\+Text,  }\item[{Search\+Filter}]{search\+Filters }\end{DoxyParamCaption})}
+
+
+
+Update current search data  
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Text} & \\
+\hline
+{\em search\+Filters} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a195e189d1b826ae58ca4b49587e4673a}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a195e189d1b826ae58ca4b49587e4673a}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!search@{search}}
+\index{search@{search}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{search}{search}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_field_search_1_1_core_1_1_search_with_filters}{Search\+With\+Filters}} Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+search\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6c5cec57fa20bfc3a628911339725126}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6c5cec57fa20bfc3a628911339725126}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!searchFilters@{searchFilters}}
+\index{searchFilters@{searchFilters}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{searchFilters}{searchFilters}}
+{\footnotesize\ttfamily Search\+Filter Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+search\+Filters\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a693e753ed746fd0831e82138af950d32}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a693e753ed746fd0831e82138af950d32}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!searchLabel@{searchLabel}}
+\index{searchLabel@{searchLabel}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{searchLabel}{searchLabel}}
+{\footnotesize\ttfamily readonly string Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+search\+Label = \char`\"{}Field Search\+:\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab60115c4ef3ade7e158e5346aadfc2aa}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab60115c4ef3ade7e158e5346aadfc2aa}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!searchText@{searchText}}
+\index{searchText@{searchText}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{searchText}{searchText}}
+{\footnotesize\ttfamily string Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+search\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get current search data with \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_ab60115c4ef3ade7e158e5346aadfc2aa}{search\+Text}} \& \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a6c5cec57fa20bfc3a628911339725126}{search\+Filters}}  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a3acf62ac213d096d820867b4d0e002c4}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a3acf62ac213d096d820867b4d0e002c4}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!serializedObject@{serializedObject}}
+\index{serializedObject@{serializedObject}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{serializedObject}{serializedObject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}{Serialized\+Object}} Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+serialized\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a16f88e8865909c2fb5e39324c3308d84}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_a16f88e8865909c2fb5e39324c3308d84}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!IsNullOrNone@{IsNullOrNone}}
+\index{IsNullOrNone@{IsNullOrNone}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{IsNullOrNone}{IsNullOrNone}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Is\+Null\+Or\+None\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Search status is inactive  
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_aab0860e563d5dbcfb04905b49a92f90f}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!SerializedObject@{SerializedObject}}
+\index{SerializedObject@{SerializedObject}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{SerializedObject}{SerializedObject}}
+{\footnotesize\ttfamily Serialized\+Object Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Serialized\+Object\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_acc22b77cdcf9c49f9dacc9a33b03d5fe}\label{class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service_acc22b77cdcf9c49f9dacc9a33b03d5fe}} 
+\index{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}!TargetObject@{TargetObject}}
+\index{TargetObject@{TargetObject}!FieldSearch.Core.Inspectors.Controllers.SearchInspectorService@{FieldSearch.Core.Inspectors.Controllers.SearchInspectorService}}
+\doxysubsubsection{\texorpdfstring{TargetObject}{TargetObject}}
+{\footnotesize\ttfamily object Field\+Search.\+Core.\+Inspectors.\+Controllers.\+Search\+Inspector\+Service.\+Target\+Object\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Current target object  
+
