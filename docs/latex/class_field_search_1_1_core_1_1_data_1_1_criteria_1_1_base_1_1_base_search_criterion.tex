@@ -1,0 +1,160 @@
+\hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion}{}\doxysection{Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion Class Reference}
+\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion}\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+
+
+\mbox{\hyperlink{namespace_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base}{Base}} search criterion for \mbox{\hyperlink{class_field_search_1_1_core_1_1_base_1_1_base_search}{Core.\+Base.\+Base\+Search}}   
+
+
+Inheritance diagram for Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.530055cm]{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a72252505c7d1b85d1ffe7eee66c49081}{Base\+Search\+Criterion}} ()
+\item 
+abstract bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a8aa1cea484c2a33db97d9caddd5fe7bc}{Has\+Result$<$ T $>$}} (Search\+Filter current\+Flags, params T\mbox{[}$\,$\mbox{]} input)
+\begin{DoxyCompactList}\small\item\em Check results  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract Search\+Filter \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_ac308b638ab99d19df44712a362f87cd2}{Get\+Criterion\+Search\+Filter}} ()
+\begin{DoxyCompactList}\small\item\em Get Criterion Search\+Filter flag  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a946c4b6c7cec6415407734b9009891d8}{Compare}} (string name, string raw\+Search\+Text, Search\+Filter current\+Search\+Filter)
+\begin{DoxyCompactList}\small\item\em Compare result with search text  \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_aa988f5327448c116780227c6a28d1321}{Is\+Active}} (Search\+Filter current\+Flags)
+\begin{DoxyCompactList}\small\item\em If criterion is active for current search flag  \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a38ec36c19bc6e98888dcd6fe399b278f}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Init method with base logic  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Search\+Filter \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a720d9a286c989fcf623ff7cacda59de4}{criterion\+Filter}}
+\begin{DoxyCompactList}\small\item\em Criterion Search\+Filter flag  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespace_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base}{Base}} search criterion for \mbox{\hyperlink{class_field_search_1_1_core_1_1_base_1_1_base_search}{Core.\+Base.\+Base\+Search}}  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a72252505c7d1b85d1ffe7eee66c49081}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a72252505c7d1b85d1ffe7eee66c49081}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!BaseSearchCriterion@{BaseSearchCriterion}}
+\index{BaseSearchCriterion@{BaseSearchCriterion}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{BaseSearchCriterion()}{BaseSearchCriterion()}}
+{\footnotesize\ttfamily Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+Base\+Search\+Criterion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a946c4b6c7cec6415407734b9009891d8}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a946c4b6c7cec6415407734b9009891d8}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!Compare@{Compare}}
+\index{Compare@{Compare}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{Compare()}{Compare()}}
+{\footnotesize\ttfamily bool Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+Compare (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{raw\+Search\+Text,  }\item[{Search\+Filter}]{current\+Search\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compare result with search text  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em raw\+Search\+Text} & \\
+\hline
+{\em current\+Search\+Filter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_ac308b638ab99d19df44712a362f87cd2}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_ac308b638ab99d19df44712a362f87cd2}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!GetCriterionSearchFilter@{GetCriterionSearchFilter}}
+\index{GetCriterionSearchFilter@{GetCriterionSearchFilter}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{GetCriterionSearchFilter()}{GetCriterionSearchFilter()}}
+{\footnotesize\ttfamily abstract Search\+Filter Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+Get\+Criterion\+Search\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Get Criterion Search\+Filter flag  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_by_field_name_search_criterion_af249f270cfe537f952eec79f0ac55185}{Field\+Search.\+Core.\+Data.\+Criteria.\+By\+Field\+Name\+Search\+Criterion}}, and \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_by_obj_name_search_criterion_a35551fdb2443f01aa1c8b9ba264bbc49}{Field\+Search.\+Core.\+Data.\+Criteria.\+By\+Obj\+Name\+Search\+Criterion}}.
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a8aa1cea484c2a33db97d9caddd5fe7bc}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a8aa1cea484c2a33db97d9caddd5fe7bc}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!HasResult$<$ T $>$@{HasResult$<$ T $>$}}
+\index{HasResult$<$ T $>$@{HasResult$<$ T $>$}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{HasResult$<$ T $>$()}{HasResult< T >()}}
+{\footnotesize\ttfamily abstract bool Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+Has\+Result$<$ T $>$ (\begin{DoxyParamCaption}\item[{Search\+Filter}]{current\+Flags,  }\item[{params T\mbox{[}$\,$\mbox{]}}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check results  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Flags} & \\
+\hline
+{\em input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_by_field_name_search_criterion_a7b357e7e17e018641d85c9b1352a4e1d}{Field\+Search.\+Core.\+Data.\+Criteria.\+By\+Field\+Name\+Search\+Criterion}}, and \mbox{\hyperlink{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_by_obj_name_search_criterion_ae3d46cab968308e4dce1a13f1810eac6}{Field\+Search.\+Core.\+Data.\+Criteria.\+By\+Obj\+Name\+Search\+Criterion}}.
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a38ec36c19bc6e98888dcd6fe399b278f}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a38ec36c19bc6e98888dcd6fe399b278f}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!Init@{Init}}
+\index{Init@{Init}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Init method with base logic  
+
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_aa988f5327448c116780227c6a28d1321}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_aa988f5327448c116780227c6a28d1321}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily virtual bool Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+Is\+Active (\begin{DoxyParamCaption}\item[{Search\+Filter}]{current\+Flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+If criterion is active for current search flag  
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Flags} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a720d9a286c989fcf623ff7cacda59de4}\label{class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion_a720d9a286c989fcf623ff7cacda59de4}} 
+\index{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}!criterionFilter@{criterionFilter}}
+\index{criterionFilter@{criterionFilter}!FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion@{FieldSearch.Core.Data.Criteria.Base.BaseSearchCriterion}}
+\doxysubsubsection{\texorpdfstring{criterionFilter}{criterionFilter}}
+{\footnotesize\ttfamily Search\+Filter Field\+Search.\+Core.\+Data.\+Criteria.\+Base.\+Base\+Search\+Criterion.\+criterion\+Filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Criterion Search\+Filter flag  
+

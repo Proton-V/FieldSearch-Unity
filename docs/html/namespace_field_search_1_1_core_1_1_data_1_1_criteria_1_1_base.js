@@ -1,0 +1,4 @@
+var namespace_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base =
+[
+    [ "BaseSearchCriterion", "class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion.html", "class_field_search_1_1_core_1_1_data_1_1_criteria_1_1_base_1_1_base_search_criterion" ]
+];
