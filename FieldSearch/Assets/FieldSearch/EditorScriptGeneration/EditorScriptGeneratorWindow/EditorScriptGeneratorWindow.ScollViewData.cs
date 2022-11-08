@@ -7,6 +7,10 @@ namespace FieldSearch.EditorScriptGeneration.Editor
 {
     public partial class EditorScriptGeneratorWindow
     {
+        /// <summary>
+        /// ScrollViewData class for <see cref="EditorScriptGeneratorWindow"/>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         private class ScrollViewData<T>
         {
             public ScrollViewData(Vector2 size) : this(size.x, size.y) { }

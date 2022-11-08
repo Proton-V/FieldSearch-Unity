@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace FieldSearch.EditorScriptGeneration.Templates
 {
+    /// <summary>
+    /// Default implementation <see cref="BaseEditorScriptTemplate"/>
+    /// </summary>
     [CreateAssetMenu(fileName = DEFAULT_OBJECT_NAME, 
         menuName = "ScriptableObjects/FieldSearch/EditorScriptGenerator/Templates/DefaultEditorScriptTemplate")]
     public partial class DefaultEditorScriptTemplate : BaseEditorScriptTemplate
@@ -68,6 +71,10 @@ namespace FieldSearch.EditorScriptGeneration.Templates
             return null;
         }
 
+        /// <summary>
+        /// Create <see cref="DefaultEditorScriptTemplate"/> with default fields
+        /// </summary>
+        /// <returns></returns>
         public static DefaultEditorScriptTemplate CreateTemplateObject()
         {
             var template = CreateInstance<DefaultEditorScriptTemplate>();

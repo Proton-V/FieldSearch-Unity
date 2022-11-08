@@ -4,6 +4,10 @@ using static FieldSearch.Core.Base.BaseSearch;
 
 namespace FieldSearch.Core.Data.Criteria
 {
+	/// <summary>
+	/// ByObjName search criterion
+	/// for <see cref="Core.SearchWithFilters"/>
+	/// </summary>
 	public class ByObjNameSearchCriterion : BaseSearchCriterion
 	{
 		public const SearchFilter CRITERION_SEARCH_FILTER = SearchFilter.ByObjName;

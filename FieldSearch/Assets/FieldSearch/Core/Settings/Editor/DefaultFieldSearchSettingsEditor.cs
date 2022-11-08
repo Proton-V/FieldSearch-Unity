@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace FieldSearch.Settings.Editor
 {
+    /// <summary>
+    /// Editor for <see cref="BaseFieldSearchSettings"/>
+    /// </summary>
     [CustomEditor(typeof(BaseFieldSearchSettings), true)]
     public class DefaultFieldSearchSettingsEditor : UnityEditor.Editor
     {

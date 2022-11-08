@@ -4,6 +4,9 @@ using Inspector = UnityEditor.Editor;
 
 namespace FieldSearch.EditorScriptGeneration.GlobalEditor
 {
+    /// <summary>
+    /// GeneratedFieldSearch implementation <see cref="BaseFieldSearchGlobalEditor"/>
+    /// </summary>
     public class GeneratedFieldSearchGlobalEditor : DefaultFieldSearchGlobalEditor
     {
         protected override Type SearchLayerInspectorType => typeof(GeneratedSearchLayerInspector);

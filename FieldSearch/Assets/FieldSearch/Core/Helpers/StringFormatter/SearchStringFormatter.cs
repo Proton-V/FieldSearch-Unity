@@ -2,6 +2,10 @@
 
 namespace FieldSearch.Helpers.StringFormatter
 {
+	/// <summary>
+	/// Helper formatter class for strings.
+	/// Used in <see cref="Core.Data.Criteria.Base.BaseSearchCriterion"/>
+	/// </summary>
 	public class SearchStringFormatter
 	{
 		public static string GetFinalString(string str, bool ignoreCase = false)

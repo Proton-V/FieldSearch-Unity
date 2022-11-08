@@ -10,8 +10,14 @@ using Object = UnityEngine.Object;
 
 namespace FieldSearch.Core.Inspectors
 {
+	/// <summary>
+	/// Default implementation <see cref="BaseSearchLayerInspector"/>
+	/// </summary>
 	public class DefaultSearchLayerInspector : BaseSearchLayerInspector
 	{
+		/// <summary>
+		/// Func to get Id of current target Object
+		/// </summary>
 		protected Func<Object, int> Id => (target) => target.GetInstanceID();
 		protected SearchInspectorService searchInspectorService;
 

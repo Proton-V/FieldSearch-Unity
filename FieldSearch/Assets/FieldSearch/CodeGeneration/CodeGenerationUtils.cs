@@ -7,8 +7,16 @@ using UnityEngine;
 
 namespace CodeGeneration
 {
+    /// <summary>
+    /// Utils for CodeGeneration
+    /// </summary>
     public class CodeGenerationUtils
     {
+        /// <summary>
+        /// Get all <see cref="UnityEditor.Editor"/> types.
+        /// Excluding default or sample types.
+        /// </summary>
+        /// <returns></returns>
         public static Type[] GetAllAvailableEditorTypes()
         {
             var types = GetAllInheritedTypes(typeof(UnityEditor.Editor),
@@ -19,9 +27,9 @@ namespace CodeGeneration
                         return false;
                     }
 
-                        // Dev debug lines
-                        if (new DirectoryInfo(Environment.CurrentDirectory).Name == nameof(FieldSearch)
-                            && name.StartsWith("FieldSearch.Samples"))
+                    // Dev debug lines
+                    if (new DirectoryInfo(Environment.CurrentDirectory).Name == nameof(FieldSearch)
+                        && name.StartsWith("FieldSearch.Samples"))
                     {
                         return true;
                     }
@@ -40,6 +48,13 @@ namespace CodeGeneration
             return types;
         }
 
+        /// <summary>
+        /// Get all inherited types for <paramref name="baseType"/>
+        /// </summary>
+        /// <param name="baseType"></param>
+        /// <param name="assemblies"></param>
+        /// <param name="ValidateNamespaceFunc"></param>
+        /// <returns></returns>
         public static Type[] GetAllInheritedTypes(Type baseType, Assembly[] assemblies = default, 
             Func<string, bool> ValidateNamespaceFunc = default)
         {
@@ -66,6 +81,12 @@ namespace CodeGeneration
             return types.ToArray();
         }
 
+        /// <summary>
+        /// Get first FieldInfo for <paramref name="attribute"/> by <paramref name="fieldName"/>
+        /// </summary>
+        /// <param name="attribute"></param>
+        /// <param name="fieldName"></param>
+        /// <returns></returns>
         public static FieldInfo GetAttributeFieldByName(Attribute attribute, string fieldName)
         {
             var field = attribute.GetType()
@@ -74,6 +95,12 @@ namespace CodeGeneration
             return field;
         }
 
+        /// <summary>
+        /// Get first FieldInfo for <paramref name="attribute"/> by type of <typeparamref name="T"/>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="attribute"></param>
+        /// <returns></returns>
         public static FieldInfo GetFirstAttributeFieldByType<T>(Attribute attribute) where T : Type
         {
             var field = attribute.GetType()
@@ -82,6 +109,12 @@ namespace CodeGeneration
             return field;
         }
 
+        /// <summary>
+        /// Get first class <typeparamref name="T"/> attribute
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static T GetFirstClassAttribute<T>(Type type) where T : Attribute
         {
             var attribute = type.GetCustomAttributes(typeof(T), true)
@@ -89,6 +122,12 @@ namespace CodeGeneration
             return attribute;
         }
 
+        /// <summary>
+        /// Save <paramref name="generatedScript"/> to folder with <paramref name="folderPath"/>
+        /// </summary>
+        /// <param name="folderPath"></param>
+        /// <param name="generatedScript"></param>
+        /// <returns></returns>
         public static bool SaveToFile(string folderPath, GeneratedScript generatedScript)
         {
             try

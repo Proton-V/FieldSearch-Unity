@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace FieldSearch.Attributes
 {
+    /// <summary>
+    /// Dropdown list attribute for type, inherited from BaseType
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class TypeRefDropdownAttribute : PropertyAttribute
     {
@@ -21,10 +24,27 @@ namespace FieldSearch.Attributes
             ShortInheritedTypeNameArray = types.Select(x => x.Name).ToArray();
         }
 
+        /// <summary>
+        /// Base type
+        /// </summary>
         public Type BaseType { get; private set; }
+
+        /// <summary>
+        /// Array with Type.AssemblyQualifiedName
+        /// </summary>
         public string[] InheritedTypeNameArray { get; private set; }
+
+        /// <summary>
+        /// Array with Type.Name
+        /// </summary>
         public string[] ShortInheritedTypeNameArray { get; private set; }
 
+        /// <summary>
+        /// Get all Inherited from <paramref name="baseType"/> Types
+        /// </summary>
+        /// <param name="baseType"></param>
+        /// <param name="assemblies"></param>
+        /// <returns></returns>
         public static List<Type> GetInheritedTypes(Type baseType, params Assembly[] assemblies)
         {
             List<Type> types = new List<Type>();

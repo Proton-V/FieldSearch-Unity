@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace FieldSearch.Core.GlobalEditor
 {
+    /// <summary>
+    /// Default implementation <see cref="BaseFieldSearchGlobalEditor"/>
+    /// </summary>
     [CustomEditor(typeof(MonoBehaviour), true, isFallback = true)]
     public class DefaultFieldSearchGlobalEditor : BaseFieldSearchGlobalEditor
     {

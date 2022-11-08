@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace FieldSearch.EditorScriptGeneration.Editor
 {
+    /// <summary>
+    /// Window for <see cref="EditorScriptGenerator"/>
+    /// </summary>
     public partial class EditorScriptGeneratorWindow : EditorWindow
     {
         EditorScriptGenerator editorScriptGenerator;

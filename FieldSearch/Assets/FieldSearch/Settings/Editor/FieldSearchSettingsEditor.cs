@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace FieldSearch.Settings.Editor
 {
+    /// <summary>
+    /// Custom editor for <see cref="FieldSearchSettings"/>
+    /// </summary>
     [CustomEditor(typeof(FieldSearchSettings), true)]
     public class FieldSearchSettingsEditor : DefaultFieldSearchSettingsEditor
     {

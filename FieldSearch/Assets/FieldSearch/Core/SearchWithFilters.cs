@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace FieldSearch.Core
 {
+	/// <summary>
+	/// Default search with filters
+	/// </summary>
 	public class SearchWithFilters : BaseSearch
 	{
 		public SearchWithFilters(SearchFilter currentFlags) : base(currentFlags)

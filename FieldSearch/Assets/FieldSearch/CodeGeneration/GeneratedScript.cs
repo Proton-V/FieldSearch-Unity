@@ -1,5 +1,8 @@
 ﻿namespace CodeGeneration.Data
 {
+    /// <summary>
+    /// Data class for Generated Script
+    /// </summary>
     public class GeneratedScript
     {
         public GeneratedScript(string fileName, string scriptStr)
