@@ -9,6 +9,10 @@ using UnityEngine;
 
 namespace FieldSearch.Helpers.Cache
 {
+	/// <summary>
+	/// SearchCache inspector controller.
+	/// With InitializeOnLoad logic
+	/// </summary>
 	[InitializeOnLoad]
 	public class SearchInspectorCache
 	{

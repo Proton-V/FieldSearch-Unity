@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace FieldSearch.Helpers.Cache.Data
 {
+    /// <summary>
+    /// Container for <see cref="SearchCacheObj"/>
+    /// </summary>
     [Serializable]
     public struct SearchCacheJson
     {

@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace FieldSearch.Core.Base
 {
+	/// <summary>
+	/// Base search class with filter implementation
+	/// </summary>
 	public abstract class BaseSearch
 	{
 		[System.Flags]

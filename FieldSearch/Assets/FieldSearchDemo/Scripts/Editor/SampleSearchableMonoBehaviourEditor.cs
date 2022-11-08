@@ -4,6 +4,9 @@ using UnityEditor;
 
 namespace FieldSearch.Samples.Editor
 {
+    /// <summary>
+    /// Custom editor for <see cref="SampleSearchableMonoBehaviour"/>
+    /// </summary>
     [CustomEditor(typeof(SampleSearchableMonoBehaviour))]
     public class SampleSearchableMonoBehaviourEditor : BaseSearchableEditor<DefaultSearchLayerInspector>
     {

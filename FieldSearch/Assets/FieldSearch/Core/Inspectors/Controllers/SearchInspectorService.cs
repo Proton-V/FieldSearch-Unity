@@ -8,6 +8,10 @@ using static FieldSearch.Core.Base.BaseSearch;
 
 namespace FieldSearch.Core.Inspectors.Controllers
 {
+	/// <summary>
+	/// Default Search Service for Inspectors.
+	/// Using <see cref="SearchWithFilters"/>
+	/// </summary>
 	public class SearchInspectorService
 	{
 		public SearchInspectorService(SerializedObject serializedObject)
@@ -27,7 +31,14 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			set => serializedObject = value;
 		}
 
+		/// <summary>
+		/// Search status is inactive
+		/// </summary>
 		public bool IsNullOrNone => string.IsNullOrEmpty(searchText) || searchFilters.Equals(SearchFilter.None);
+
+		/// <summary>
+		/// Current target object
+		/// </summary>
 		private object TargetObject => serializedObject?.targetObject;
 
 		private SearchWithFilters search;
@@ -37,11 +48,21 @@ namespace FieldSearch.Core.Inspectors.Controllers
 		private string searchText;
 		private SearchFilter searchFilters;
 
+		/// <summary>
+		/// Get current search data
+		/// with <see cref="searchText"/> & <see cref="searchFilters"/>
+		/// </summary>
+		/// <returns></returns>
 		public (string searchText, int flags) GetData()
 		{
 			return (searchText, (int)searchFilters);
 		}
 
+		/// <summary>
+		/// Update current search data
+		/// </summary>
+		/// <param name="searchText"></param>
+		/// <param name="searchFilters"></param>
 		public void UpdateData(string searchText, SearchFilter searchFilters)
 		{
 			if (!string.IsNullOrEmpty(searchText))
@@ -55,6 +76,10 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			serializedObject?.ApplyModifiedProperties();
 		}
 
+		/// <summary>
+		/// Try show full inspector search layer
+		/// </summary>
+		/// <returns></returns>
 		public bool ShowInspectorLayer()
         {
             if (!ShowSearchTextArea())
@@ -65,6 +90,10 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			return ShowSearchObjectsLayer();
 		}
 
+		/// <summary>
+		/// Try show only search layer
+		/// </summary>
+		/// <returns></returns>
 		public bool ShowSearchTextArea()
 		{
 			try
@@ -92,6 +121,10 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			}
 		}
 
+		/// <summary>
+		/// Try show only search result layer
+		/// </summary>
+		/// <returns></returns>
 		public bool ShowSearchObjectsLayer()
 		{
 			if (IsNullOrNone)
@@ -140,6 +173,13 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			return true;
 		}
 
+		/// <summary>
+		/// Get all <see cref="SerializedProperty"/> based on <paramref name="property"/>
+		/// with inherited objs
+		/// </summary>
+		/// <param name="property"></param>
+		/// <param name="validateFunc"></param>
+		/// <returns></returns>
 		private List<SerializedProperty> GetSerializedPropertyRecursive(SerializedProperty property, 
 			Func<SerializedProperty, bool> validateFunc)
         {
@@ -177,6 +217,13 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			return result;
 		}
 
+		/// <summary>
+		/// Get all <see cref="FieldInfo"/> for <paramref name="type"/>
+		/// with inherited objs
+		/// </summary>
+		/// <param name="property"></param>
+		/// <param name="validateFunc"></param>
+		/// <returns></returns>
 		private List<FieldInfo> GetFieldInfoRecursive(Type type)
         {
 			var result = 
@@ -196,6 +243,10 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			return result;
 		}
 
+		/// <summary>
+		/// Just show search layer
+		/// </summary>
+		/// <returns></returns>
 		private bool ShowSearchFields()
 		{
 			var searchTextChanged =
@@ -217,6 +268,11 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			return true;
 		}
 
+		/// <summary>
+		/// Method to call GUI action that returns state of change
+		/// </summary>
+		/// <param name="action"></param>
+		/// <returns></returns>
 		private bool ActionWithChangeCheck(Action action)
 		{
 			EditorGUI.BeginChangeCheck();
@@ -228,6 +284,10 @@ namespace FieldSearch.Core.Inspectors.Controllers
 			return false;
 		}
 
+		/// <summary>
+		/// Default call <see cref="EditorGUILayout.EndVertical()"/> with extra actions
+		/// </summary>
+		/// <returns></returns>
 		private bool EndVertical()
 		{
 			serializedObject?.ApplyModifiedProperties();

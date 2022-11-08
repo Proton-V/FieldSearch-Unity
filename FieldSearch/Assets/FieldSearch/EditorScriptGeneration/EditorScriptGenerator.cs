@@ -6,6 +6,9 @@ using UnityEditor;
 
 namespace FieldSearch.EditorScriptGeneration
 {
+    /// <summary>
+    /// <see cref="BaseCodeGenerator{T}"/> for <see cref="UnityEditor.Editor"/>
+    /// </summary>
     public class EditorScriptGenerator : BaseCodeGenerator<BaseEditorScriptTemplate>
     {
         public EditorScriptGenerator(BaseCodeGeneratorSettings<BaseEditorScriptTemplate> settings)

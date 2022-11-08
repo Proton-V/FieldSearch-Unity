@@ -9,6 +9,8 @@
 - Create your own search logic if necessary
 - Override current CustomEditors with EditorScriptGeneratorWindow
 
+[Docs link](https://proton-v.github.io/FieldSearch-Unity/html/index.html)
+
 ### Tested on:
  - Unity Editor: 2018.4.3f1 | 2020.3.35f1
  - OS: Windows 10

@@ -2,6 +2,9 @@
 
 namespace FieldSearch.Helpers.Cache.Data
 {
+    /// <summary>
+    /// Stored SearchCache struct
+    /// </summary>
     [Serializable]
     public struct SearchCacheObj
     {

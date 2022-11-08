@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace FieldSearch.EditorScriptGeneration.Templates
 {
+    /// <summary>
+    /// Base editor script template object.
+    /// Base editor implementation <see cref="BaseScriptTemplate"/>
+    /// </summary>
     public abstract class BaseEditorScriptTemplate : BaseScriptTemplate
     {
         protected Type DefaultBaseEditorType => Type.GetType(_defaultBaseEditorTypeName);

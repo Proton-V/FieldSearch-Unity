@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace FieldSearch.Attributes.Drawers
 {
+    /// <summary>
+    /// Drawer for <see cref="TypeRefDropdownAttribute"/>
+    /// </summary>
     [CustomPropertyDrawer(typeof(TypeRefDropdownAttribute))]
     public class TypeRefDropdownAttributeDrawer : PropertyDrawer
     {
@@ -38,6 +41,10 @@ namespace FieldSearch.Attributes.Drawers
             }
         }
 
+        /// <summary>
+        /// First Init call
+        /// </summary>
+        /// <param name="property"></param>
         private void Init(SerializedProperty property)
         {
             target = attribute as TypeRefDropdownAttribute;
