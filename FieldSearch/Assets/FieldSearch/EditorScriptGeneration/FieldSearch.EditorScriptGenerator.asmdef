@@ -1,0 +1,19 @@
+{
+    "name": "FieldSearch.EditorScriptGeneration",
+    "references": [
+        "CodeGenerator",
+        "FieldSearch.Attributes",
+        "FieldSearch.Core.GlobalEditor",
+        "FieldSearch.Core"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

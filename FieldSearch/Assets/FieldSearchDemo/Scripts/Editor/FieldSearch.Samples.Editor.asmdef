@@ -1,0 +1,17 @@
+{
+    "name": "FieldSearch.Samples.Editor",
+    "references": [
+        "FieldSearch.Core",
+        "FieldSearch.Samples"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

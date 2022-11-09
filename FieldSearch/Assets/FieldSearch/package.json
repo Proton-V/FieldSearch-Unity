@@ -1,0 +1,14 @@
+{
+  "name": "com.protonv.fieldsearch",
+  "version": "1.0.3",
+  "displayName": "FieldSearch",
+  "description": "FieldSearch Inspector",
+  "unity": "2018.4",
+  "dependencies": {
+
+  },
+  "author": {
+    "name": "Proton-V",
+    "url": "https://github.com/Proton-V"
+  }
+}
