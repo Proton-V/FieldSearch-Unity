@@ -1,4 +1,0 @@
-var namespace_field_search_1_1_core_1_1_inspectors_1_1_editor_1_1_base =
-[
-    [ "BaseSearchableEditor", "class_field_search_1_1_core_1_1_inspectors_1_1_editor_1_1_base_1_1_base_searchable_editor.html", "class_field_search_1_1_core_1_1_inspectors_1_1_editor_1_1_base_1_1_base_searchable_editor" ]
-];
