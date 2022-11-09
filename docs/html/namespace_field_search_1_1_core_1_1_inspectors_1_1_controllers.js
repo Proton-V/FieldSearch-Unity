@@ -1,4 +1,0 @@
-var namespace_field_search_1_1_core_1_1_inspectors_1_1_controllers =
-[
-    [ "SearchInspectorService", "class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service.html", "class_field_search_1_1_core_1_1_inspectors_1_1_controllers_1_1_search_inspector_service" ]
-];

@@ -1,4 +1,0 @@
-var namespace_field_search_1_1_attributes_1_1_drawers =
-[
-    [ "TypeRefDropdownAttributeDrawer", "class_field_search_1_1_attributes_1_1_drawers_1_1_type_ref_dropdown_attribute_drawer.html", "class_field_search_1_1_attributes_1_1_drawers_1_1_type_ref_dropdown_attribute_drawer" ]
-];
